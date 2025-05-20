@@ -1,0 +1,46 @@
+{
+  "PIECE_OF_CAKE" : {
+    "runCount" : 100,
+    "successCount" : 99
+  },
+  "SURE_THING" : {
+    "runCount" : 100,
+    "successCount" : 98
+  },
+  "GAMBLE" : {
+    "runCount" : 100,
+    "successCount" : 90
+  },
+  "QUITE_LIKELY" : {
+    "runCount" : 100,
+    "successCount" : 95
+  },
+  "WALK_IN_THE_PARK" : {
+    "runCount" : 100,
+    "successCount" : 95
+  },
+  "RATHER_DETRIMENTAL" : {
+    "runCount" : 100,
+    "successCount" : 77
+  },
+  "Hmmm...." : {
+    "runCount" : 101,
+    "successCount" : 91
+  },
+  "RISKY" : {
+    "runCount" : 100,
+    "successCount" : 79
+  },
+  "PLAYING_WITH_FIRE" : {
+    "runCount" : 100,
+    "successCount" : 75
+  },
+  "SUICIDE_MISSION" : {
+    "runCount" : 100,
+    "successCount" : 71
+  },
+  "IMPOSSIBLE" : {
+    "runCount" : 100,
+    "successCount" : 66
+  }
+}

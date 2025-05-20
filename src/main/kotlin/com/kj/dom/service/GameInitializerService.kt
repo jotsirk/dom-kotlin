@@ -1,6 +1,7 @@
 package com.kj.dom.service
 
 import com.kj.dom.model.ShopItemEnum.HPOT
+import com.kj.dom.service.helper.DataMinerService
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Autowired
@@ -12,10 +13,14 @@ import org.springframework.stereotype.Service
 class GameInitializerService: ApplicationRunner {
 
     @Autowired
+    private lateinit var dataMinerService: DataMinerService
+
+    @Autowired
     private lateinit var gameService: GameService
 
     override fun run(args: ApplicationArguments?) {
-        initializeGame()
+        dataMinerService.dataMine()
+//        initializeGame()
     }
 
     // TODO maybe just init on postConstruct
@@ -34,15 +39,15 @@ class GameInitializerService: ApplicationRunner {
 
         val shopItems = gameService.getShopItems(gameSate.gameId)
 
-        if (gameSate.lives == 1) {
-            val healthPotion = shopItems.items.find { it.name == HPOT.name }
-
-            if (healthPotion != null && healthPotion.cost <= gameSate.gold) {
-
-            }
-
-            // todo try to buy lives
-        }
+//        if (gameSate.lives == 1) {
+//            val healthPotion = shopItems.items.find { it.name == HPOT.name }
+//
+//            if (healthPotion != null && healthPotion.cost <= gameSate.gold) {
+//
+//            }
+//
+//            // todo try to buy lives
+//        }
 
         // todo check ads
         val messageBoardAds = gameService.getAdMessages(gameSate.gameId)
