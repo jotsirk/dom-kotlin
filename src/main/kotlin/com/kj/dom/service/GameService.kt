@@ -57,8 +57,7 @@ class GameService {
             val decryptedMessage = if (adResponse.encrypted == 1 && isBase64(adResponse.message)) decodeBase64(adResponse.message) else adResponse.message
             val decryptedProbability = if (adResponse.encrypted == 1 && isBase64(adResponse.probability)) decodeBase64(adResponse.probability) else adResponse.probability
 
-            val enumProbability = AdProbability.entries.firstOrNull { it.displayName == decryptedProbability }
-                ?: decryptedProbability
+            val enumProbability = AdProbability.fromDisplayName(decryptedProbability)
 
             AdMessage(
                 adId = decryptedAdId,
@@ -66,7 +65,7 @@ class GameService {
                 reward = adResponse.reward,
                 expiresIn = adResponse.expiresIn,
                 encrypted = adResponse.encrypted,
-                probability = enumProbability.toString()
+                probability = enumProbability?.displayName ?: decryptedProbability,
             )
         } ?: throw IllegalStateException("Could not fetch ad messages")
     }

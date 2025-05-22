@@ -4,7 +4,10 @@ import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import com.fasterxml.jackson.module.kotlin.registerKotlinModule
 import com.kj.dom.model.AdMessage
+import com.kj.dom.model.AdProbability
+import com.kj.dom.model.AdProbability.PIECE_OF_CAKE
 import com.kj.dom.model.GameState
+import com.kj.dom.model.ShopItemEnum
 import com.kj.dom.model.ShopItemEnum.HPOT
 import com.kj.dom.model.response.ShopBuyResponse
 import com.kj.dom.service.GameService
@@ -24,19 +27,22 @@ class DataMinerService {
 
     private val objectMapper: ObjectMapper = jacksonObjectMapper().registerKotlinModule()
     private val adMinerTurnCount = 100
-    private val probabilityTurnCount = 100
+    private val probabilityTurnCount = 500
 
     fun dataMine() {
         gameSerivce.startGame()
 
-        val adProbabilitiesGroup = mutableSetOf<String>()
-        val adDataLogList = mutableListOf<AdData>()
+//        val adProbabilitiesGroup = mutableSetOf<String>()
+//        val adDataLogList = mutableListOf<AdData>()
+
         val gameState = gameSerivce.getGameState()
 
-        mineAdData(gameState, adProbabilitiesGroup, adDataLogList)
-        writeAdDataToFile(adDataLogList, adProbabilitiesGroup)
+//        mineAdData(gameState, adProbabilitiesGroup, adDataLogList)
+//        writeAdDataToFile(adDataLogList, adProbabilitiesGroup)
 
-        mineProbabilityPercentage(gameState, adProbabilitiesGroup)
+        val probabilitiesList = AdProbability.entries.map { it.displayName }.toSet()
+        mineProbabilityPercentage(gameState, probabilitiesList)
+        dataMineItemProbabilities(gameState, PIECE_OF_CAKE)
     }
 
     private fun mineAdData(
@@ -109,9 +115,12 @@ class DataMinerService {
     }
 
     private fun mineProbabilityPercentage(gameState: GameState, adProbabilitiesGroup: Set<String>) {
-        val unfinishedProbabilityResults = adProbabilitiesGroup.associateWith { ProbabilityData(0, 0) }.toMutableMap()
+        val unfinishedProbabilityResults = adProbabilitiesGroup
+            .filter { it == AdProbability.PLAYING_WITH_FIRE.displayName }
+            .associateWith { ProbabilityData(0, 0) }.toMutableMap()
         val finishedProbabilityResults = mutableMapOf<String, ProbabilityData>()
         var currenGameState = gameState
+        var consecutiveSkips = 0
 
         while (unfinishedProbabilityResults.isNotEmpty()) {
             var adsList: List<AdMessage>
@@ -133,13 +142,22 @@ class DataMinerService {
             val validProbabilities = unfinishedProbabilityResults.keys.intersect(adsProbabilities)
 
             if (validProbabilities.isEmpty()) {
-                log.info("No valid ads found for current unfinished probabilities. Skipping day and buying items.")
+                consecutiveSkips++
+                log.info("No valid ads found for current unfinished probabilities. Skipping day and buying items. (Consecutive skips: {})", consecutiveSkips)
+
+                if (consecutiveSkips >= 100) {
+                    log.warn("Maximum consecutive skips reached (100). Terminating probability mining.")
+                    break
+                }
+
                 try {
-                    gameSerivce.buyShopItem(currenGameState.gameId, HPOT.name)
+                    gameSerivce.buyShopItem(currenGameState.gameId, HPOT.displayName)
                 } catch (e: Exception) {
                     log.warn("Failed to buy shop item for game {}: {}", currenGameState.gameId, e.message)
                 }
                 continue
+            } else {
+                consecutiveSkips = 0
             }
 
             val probability = validProbabilities.first()
@@ -149,7 +167,7 @@ class DataMinerService {
                 val solvedAd = gameSerivce.solveAd(currenGameState.gameId, ad.adId)
 
                 if (solvedAd.lives == 0) {
-                    log.info("Player died (score: {}). Restarting the game.", currenGameState.score)
+                    log.info("Player died (score: {}). Restarting the game.", solvedAd.score)
 
                     updateProbabilityData(probability, unfinishedProbabilityResults, false)
 
@@ -157,7 +175,11 @@ class DataMinerService {
                     currenGameState = gameSerivce.getGameState()
                     continue
                 } else {
-                    updateProbabilityData(probability, unfinishedProbabilityResults, true)
+                    if (solvedAd.success) {
+                        updateProbabilityData(probability, unfinishedProbabilityResults, true)
+                    } else {
+                        updateProbabilityData(probability, unfinishedProbabilityResults, false)
+                    }
                 }
             } else {
                 log.info("Could not process ad with probability {}. Skipping day and buying shop item.", probability)
@@ -201,6 +223,243 @@ class DataMinerService {
 
         log.info("Finished probability results saved to {}", resultsFile.absolutePath)
     }
+
+    private fun dataMineItemProbabilities(gameState: GameState, probability: AdProbability) {
+        val clearRunProbabilityData = ClearRunProbabilityData(probability, 0, 0)
+        val itemRunList = mutableListOf<ItemRunProbablityData>()
+
+        startClearRun(gameState, clearRunProbabilityData)
+
+        val shopItems = ShopItemEnum.entries.filterNot { it.name == HPOT.name }
+        shopItems.forEach {
+            val itemRunProbabilityData = ItemRunProbablityData(it, probability, 0, 0)
+
+            startItemRun(itemRunProbabilityData)
+            itemRunList.add(itemRunProbabilityData)
+        }
+
+        writeResultsToFile(probability, clearRunProbabilityData, itemRunList)
+    }
+
+
+    private fun startClearRun(gameState: GameState, clearRunProbabilityData: ClearRunProbabilityData) {
+        var currentGameState = gameState
+
+        while (clearRunProbabilityData.runCount < probabilityTurnCount) {
+            try {
+                val adsList = gameSerivce.getAdMessages(currentGameState.gameId)
+
+                val targetAd = adsList.firstOrNull { it.probability == clearRunProbabilityData.probability.displayName }
+
+                if (targetAd != null) {
+                    val solveAdResponse = gameSerivce.solveAd(currentGameState.gameId, targetAd.adId)
+
+                    if (solveAdResponse.lives == 0) {
+                        log.info("User died while solving ad with probability {}. Restarting game.", targetAd.probability)
+                        clearRunProbabilityData.runCount++
+                        gameSerivce.startGame()
+                        currentGameState = gameSerivce.getGameState()
+                        continue
+                    }
+
+                    if (solveAdResponse.success) clearRunProbabilityData.successCount++
+
+                    clearRunProbabilityData.runCount++
+
+                    log.info(
+                        "Solved ad with probability {}. RunCount: {}, SuccessCount: {}",
+                        targetAd.probability,
+                        clearRunProbabilityData.runCount,
+                        clearRunProbabilityData.successCount
+                    )
+                } else {
+                    log.info("Target probability {} not found in ads list. Buying life from shop.", clearRunProbabilityData.probability)
+
+                    try {
+                        val buyShopResponse = gameSerivce.buyShopItem(currentGameState.gameId, HPOT.displayName)
+                        currentGameState = currentGameState.copy(
+                            lives = buyShopResponse.lives,
+                            gold = buyShopResponse.gold,
+                            turn = buyShopResponse.turn
+                        )
+                    } catch (e: Exception) {
+                        log.error("Failed to buy health potion. Restarting game.", e)
+                        gameSerivce.startGame()
+                        currentGameState = gameSerivce.getGameState()
+                    }
+                }
+            } catch (e: Exception) {
+                log.error("Encountered an error during ad processing or game state update. Restarting game.", e)
+                gameSerivce.startGame()
+                currentGameState = gameSerivce.getGameState()
+            }
+        }
+
+        log.info(
+            "Finished clear run for probability {}. Total Runs: {}, Total Successes: {}.",
+            clearRunProbabilityData.probability,
+            clearRunProbabilityData.runCount,
+            clearRunProbabilityData.successCount
+        )
+    }
+
+    private fun startItemRun(itemRunProbabilityData: ItemRunProbablityData) {
+        gameSerivce.startGame()
+        var currentGameState = gameSerivce.getGameState()
+
+        val itemPrice = itemRunProbabilityData.item.price
+        log.info("Starting item run for {} with target probability {}. Collecting gold to buy the item (Cost: {}).",
+            itemRunProbabilityData.item, itemRunProbabilityData.probability.displayName, itemPrice)
+
+        while (currentGameState.gold < itemPrice) {
+            try {
+                val adsList = gameSerivce.getAdMessages(currentGameState.gameId)
+
+                val randomAd = adsList.firstOrNull()
+                if (randomAd != null) {
+                    val solveAdResponse = gameSerivce.solveAd(currentGameState.gameId, randomAd.adId)
+                    currentGameState = currentGameState.copy(
+                        lives = solveAdResponse.lives,
+                        gold = solveAdResponse.gold,
+                        score = solveAdResponse.score
+                    )
+
+                    if (solveAdResponse.lives == 0) {
+                        log.info("Player died while collecting gold. Restarting game.")
+                        gameSerivce.startGame()
+                        currentGameState = gameSerivce.getGameState()
+                        continue
+                    }
+                    log.info("Collected gold: {} (Lives: {}, Turn: {}).", currentGameState.gold, currentGameState.lives, currentGameState.turn)
+                } else {
+                    log.info("No ads available to collect gold. Skipping turn.")
+                }
+            } catch (e: Exception) {
+                log.error("Error while collecting gold. Restarting game.", e)
+                gameSerivce.startGame()
+                currentGameState = gameSerivce.getGameState()
+            }
+        }
+
+        try {
+            val shopBuyResponse = gameSerivce.buyShopItem(currentGameState.gameId, itemRunProbabilityData.item.displayName)
+            currentGameState = currentGameState.copy(
+                lives = shopBuyResponse.lives,
+                gold = shopBuyResponse.gold,
+                turn = shopBuyResponse.turn
+            )
+            log.info("Successfully bought item {}. Gold remaining: {}, Lives: {}.",
+                itemRunProbabilityData.item, currentGameState.gold, currentGameState.lives)
+        } catch (e: Exception) {
+            log.error("Failed to buy item {}. Restarting game.", itemRunProbabilityData.item, e)
+            gameSerivce.startGame()
+            currentGameState = gameSerivce.getGameState()
+            return
+        }
+
+        log.info("Starting to solve ads for probability {} with item {}.",
+            itemRunProbabilityData.probability.displayName, itemRunProbabilityData.item)
+
+        var notFoundCounter = 0
+
+        while (itemRunProbabilityData.runCount < probabilityTurnCount) {
+            try {
+                val adsList = gameSerivce.getAdMessages(currentGameState.gameId)
+                val targetAd = adsList.firstOrNull { it.probability == itemRunProbabilityData.probability.name }
+
+                if (targetAd != null) {
+                    val solveAdResponse = gameSerivce.solveAd(currentGameState.gameId, targetAd.adId)
+
+                    if (solveAdResponse.lives == 0) {
+                        log.info("Player died while solving ad with probability {}. Restarting run.", targetAd.probability)
+                        gameSerivce.startGame()
+                        currentGameState = gameSerivce.getGameState()
+                        return startItemRun(itemRunProbabilityData)
+                    }
+
+                    if (solveAdResponse.success) itemRunProbabilityData.successCount++
+
+                    itemRunProbabilityData.runCount++
+
+                    currentGameState = currentGameState.copy(
+                        lives = solveAdResponse.lives,
+                        gold = solveAdResponse.gold,
+                        score = solveAdResponse.score
+                    )
+                    log.info(
+                        "Successfully solved ad with probability {}. RunCount: {}, SuccessCount: {}, Gold: {}, Lives: {}.",
+                        targetAd.probability, itemRunProbabilityData.runCount, itemRunProbabilityData.successCount,
+                        currentGameState.gold, currentGameState.lives
+                    )
+                    notFoundCounter = 0
+                } else {
+                    notFoundCounter++
+                    log.info(
+                        "Target probability {} not found in ads (Turn: {}). NotFoundCount: {}.",
+                        itemRunProbabilityData.probability.displayName, currentGameState.turn, notFoundCounter
+                    )
+
+                    if (notFoundCounter >= 15) {
+                        log.info("Target probability {} not found for 15 consecutive turns. Restarting game.", itemRunProbabilityData.probability.displayName)
+                        gameSerivce.startGame()
+                        currentGameState = gameSerivce.getGameState()
+                        return startItemRun(itemRunProbabilityData)
+                    }
+
+                    try {
+                        val shopBuyResponse = gameSerivce.buyShopItem(currentGameState.gameId, HPOT.displayName)
+                        currentGameState = currentGameState.copy(
+                            lives = shopBuyResponse.lives,
+                            gold = shopBuyResponse.gold,
+                            turn = shopBuyResponse.turn
+                        )
+                    } catch (e: Exception) {
+                        log.error("Failed to buy life. Restarting game.", e)
+                        gameSerivce.startGame()
+                        currentGameState = gameSerivce.getGameState()
+                        return startItemRun(itemRunProbabilityData)
+                    }
+                }
+            } catch (e: Exception) {
+                log.error("Error during ad processing. Restarting game.", e)
+                gameSerivce.startGame()
+                currentGameState = gameSerivce.getGameState()
+                return startItemRun(itemRunProbabilityData)
+            }
+        }
+
+
+        log.info("Finished item run for {} with probability {}. Total Runs: {}, Total Successes: {}.",
+            itemRunProbabilityData.item, itemRunProbabilityData.probability.displayName,
+            itemRunProbabilityData.runCount, itemRunProbabilityData.successCount)
+    }
+
+    private fun writeResultsToFile(
+        probability: AdProbability,
+        clearRunProbabilityData: ClearRunProbabilityData,
+        itemRunList: List<ItemRunProbablityData>
+    ) {
+        val outputDir = File("logs")
+        if (!outputDir.exists()) {
+            outputDir.mkdir()
+        }
+
+        val fileName = "probability_results_${probability.name.lowercase()}.json"
+        val file = File(outputDir, fileName)
+
+        val dataToWrite = mapOf(
+            "clearRunProbabilityData" to clearRunProbabilityData,
+            "itemRunList" to itemRunList
+        )
+
+        try {
+            file.writeText(objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(dataToWrite))
+            log.info("Results for probability '{}' written to file: {}", probability.name, file.absolutePath)
+        } catch (e: Exception) {
+            log.error("Failed to write results for probability '{}' to file", probability.name, e)
+        }
+    }
+
 }
 
 data class AdData(
@@ -212,4 +471,17 @@ data class AdData(
 data class ProbabilityData(
     val runCount: Int,
     val successCount: Int,
+)
+
+data class ItemRunProbablityData(
+    val item: ShopItemEnum,
+    val probability: AdProbability,
+    var runCount: Int,
+    var successCount: Int,
+)
+
+data class ClearRunProbabilityData(
+    val probability: AdProbability,
+    var runCount: Int,
+    var successCount: Int,
 )
