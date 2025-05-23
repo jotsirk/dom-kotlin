@@ -1,10 +1,13 @@
 package com.kj.dom.model
 
+import jakarta.persistence.Embeddable
+
+@Embeddable
 data class AdMessage(
-    val adId: String,
-    val message: String,
-    val reward: String,
-    val expiresIn: Int,
-    val encrypted: Any?,
-    val probability: String,
+    val adId: String = "",
+    val message: String = "",
+    val reward: String = "",
+    val expiresIn: Int = 0,
+    val encrypted: Int? = null,
+    val probability: String = ""
 )

@@ -7,7 +7,7 @@ data class AdMessageResponse(
     val message: String,
     val reward: String,
     val expiresIn: Int,
-    val encrypted: Any?,
+    val encrypted: Int?,
     val probability: String,
 ) {
     fun toModel(): AdMessage = AdMessage(
