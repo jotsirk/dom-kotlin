@@ -1,8 +1,5 @@
 package com.kj.dom.model
 
-import jakarta.persistence.Embeddable
-
-@Embeddable
 data class AdMessage(
     val adId: String = "",
     val message: String = "",
