@@ -24,25 +24,18 @@ class DataMinerService {
     }
 
     private fun runRealGame() {
-        gameSerivce.startGame()
-        var currentGameState = gameSerivce.getGameState()
+        var currentGameState = gameSerivce.startGame()
 
         log.info("Starting game: ${currentGameState.gameId}")
 
         var isGameRunning = true
         var suggestedMove: SuggestedMove? = null
+        var gamesRun = 0
 
-        while (isGameRunning) {
+        while (gamesRun <= 10) {
             val adsList = gameSerivce.getAdMessages(currentGameState.gameId)
 
-            suggestedMove = calculateRealSuggestedMove(adsList, currentGameState, suggestedMove?.move == "wait")
-
-            if (suggestedMove == null) {
-                log.info("something impossible happened, finishing game")
-                log.info("Finished game with score ${currentGameState.score}, on turn ${currentGameState.turn}")
-                isGameRunning = false
-                continue
-            }
+            suggestedMove = calculateRealSuggestedMove(adsList, currentGameState)
 
             when (suggestedMove.move) {
                 "solve" -> {
@@ -90,7 +83,10 @@ class DataMinerService {
 
             if (currentGameState.lives == 0) {
                 log.info("Game over! Finished game with score ${currentGameState.score}, on turn ${currentGameState.turn}")
-                isGameRunning = false
+                gamesRun++
+
+                currentGameState = gameSerivce.startGame()
+                log.info("Starting new game: ${currentGameState.gameId}")
             }
         }
     }
@@ -98,8 +94,7 @@ class DataMinerService {
     private fun calculateRealSuggestedMove(
         ads: List<AdMessage>,
         gameState: GameState,
-        skippedTurn: Boolean = false,
-    ): SuggestedMove? {
+    ): SuggestedMove {
         val groupedAdProbabilities = createAdProbabilityMap(ads)
         val worthMap: Map<AdMessage, Double> = ads.associateWith {
             calculateAdRewardWorth(
@@ -107,62 +102,101 @@ class DataMinerService {
             )
         }
 
-        if (gameState.lives == 1 && gameState.gold >= HPOT.price) {
-            return SuggestedMove("buy", itemId = HPOT.id)
-        } else if (gameState.lives == 1 && gameState.gold < HPOT.price) {
-            if (groupedAdProbabilities[ProbabilityLevel.EASY.name]?.isEmpty() == true) {
-                if (ads.any { it.expiresIn == 1 } && !skippedTurn) {
-                    // TODO add an already skipped possibility too to continue and not get stuck in a loop
+        if (gameState.lives == 1) {
+            if (gameState.gold >= HPOT.price) {
+                return SuggestedMove("buy", itemId = HPOT.id)
+            } else {
+                val necessaryGold = HPOT.price - gameState.gold
+                val easyAds = groupedAdProbabilities[ProbabilityLevel.EASY.name].orEmpty()
+
+                val suggestedEasyAdList = easyAds.filter {
+                    it.reward >= necessaryGold
+                }
+
+                if (suggestedEasyAdList.size == 1) {
+                    return SuggestedMove("solve", adIds = listOf(suggestedEasyAdList.first().adId))
+                }
+
+                val suggestedEasyAd = easyAds
+                    .filter {
+                        val worth = worthMap[it] ?: 0.0
+                        val threshold = AdProbability.fromDisplayName(it.probability)?.acceptableValue ?: 0
+                        worth > threshold.toDouble()
+                    }
+                    .maxByOrNull { it.reward }
+
+                if (suggestedEasyAd != null) {
+                    return SuggestedMove("solve", adIds = listOf(suggestedEasyAd.adId))
+                }
+
+                if (ads.count { it.expiresIn == 1 } >= 3) {
                     return SuggestedMove("wait")
                 }
-            } else {
-                val acceptableAds = worthMap
-                    .filter { it.value >= AdProbability.fromDisplayName(it.key.probability)?.acceptableValue!! }
-                    .entries.sortedByDescending { it.value }
 
-                if (acceptableAds.isEmpty()) {
-                    val bestPossibleAd = worthMap.maxBy { it.value }
-                    return SuggestedMove("solve", adIds = listOf(bestPossibleAd.key.adId))
+                val easyAdsAccumulatedReward = easyAds
+                    .filter { it.expiresIn > 1 }
+                    .sumOf { it.reward }
+
+                if (easyAdsAccumulatedReward >= necessaryGold) {
+                    val validAds = easyAds
+                        .filter { it.expiresIn > 1 && (it.reward) > 0 }
+                        .sortedByDescending { worthMap[it] ?: 0.0 }
+
+                    return SuggestedMove("solveMultiple", adIds = validAds.map { it.adId })
                 }
 
-                val necessaryGold = HPOT.price - gameState.gold
-                val bestAd = acceptableAds.first()
-
-                if (bestAd.key.reward.toInt() > necessaryGold) {
-                    return SuggestedMove("solve", adIds = listOf(bestAd.key.adId))
-                }
-
-                if (acceptableAds.size == 1) {
-                    val bestAd1 = acceptableAds.first()
-                    return SuggestedMove("solve", adIds = listOf(bestAd1.key.adId))
-                } else {
-                    val bestAd2 = acceptableAds.firstOrNull { it.key.expiresIn != 1 }
-                        ?: worthMap.maxBy { it.value }
-                    return SuggestedMove("solve", adIds = listOf(bestAd2.key.adId))
-                }
+                val riskyAd = worthMap.maxBy { it.value }
+                return SuggestedMove("solve", adIds = listOf(riskyAd.key.adId))
             }
         } else {
             val acceptableAds =
                 worthMap.filter { it.value >= AdProbability.fromDisplayName(it.key.probability)?.acceptableValue!! }
                     .entries.sortedByDescending { it.value }
-            val easyAds = groupedAdProbabilities[ProbabilityLevel.EASY.name]
+            val easyAds = groupedAdProbabilities[ProbabilityLevel.EASY.name].orEmpty()
 
             if (acceptableAds.isEmpty()) {
-                val acceptableEasyAds = easyAds?.filter {
-                    AdProbability.fromDisplayName(it.probability)?.acceptableValue!! > worthMap.getValue(it) - 8
-                }?.filter { it.reward.toInt() > HPOT.price - gameState.gold }
+                val acceptableEasyAds = easyAds.filter {
+                    val threshold = AdProbability.fromDisplayName(it.probability)?.acceptableValue ?: 0
+                    val worth = worthMap[it] ?: 0.0
+                    threshold > worth - 5
+                }.filter {
+                    it.reward > HPOT.price - gameState.gold
+                }
 
-                val easyAd = acceptableEasyAds?.firstOrNull()
-
+                val easyAd = acceptableEasyAds.firstOrNull()
                 if (easyAd != null) {
                     return SuggestedMove("solve", adIds = listOf(easyAd.adId))
                 }
 
-                if (gameState.turn < 40 && gameState.gold > 100) {
-                    return SuggestedMove("buy", ShopItemEnum.CS.id)
+                if (easyAds.isEmpty()) {
+                    when {
+                        gameState.gold > 300 -> return SuggestedMove("buy", ShopItemEnum.MTRIX.id)
+                        gameState.gold > 100 -> return SuggestedMove("buy", ShopItemEnum.CS.id)
+                        gameState.gold > 50 -> return SuggestedMove("buy", ShopItemEnum.HPOT.id)
+                        else -> {
+                            val fallbackAd =
+                                groupedAdProbabilities[ProbabilityLevel.MEDIUM.name].orEmpty().firstOrNull {
+                                    it.probability in listOf(
+                                        AdProbability.QUITE_LIKELY.displayName,
+                                        AdProbability.HMMM.displayName
+                                    )
+                                } ?: worthMap.maxByOrNull { it.value }?.key
+
+                            if (fallbackAd != null) {
+                                return SuggestedMove("solve", adIds = listOf(fallbackAd.adId))
+                            }
+
+                            val riskyAd = worthMap.maxBy { it.value }
+                            return SuggestedMove("solve", adIds = listOf(riskyAd.key.adId))
+                        }
+                    }
+                } else {
+                    val easyWorthMap = worthMap.filter { it.key in easyAds }
+                    val easiestAd = easyWorthMap.maxBy { it.value }
+                    return SuggestedMove("solve", adIds = listOf(easiestAd.key.adId))
                 }
             } else {
-                if (easyAds?.isEmpty()!!) {
+                if (easyAds.isEmpty()) {
                     val mediumAds = groupedAdProbabilities[ProbabilityLevel.MEDIUM.name]
 
                     if (mediumAds?.isNotEmpty()!!) {
@@ -205,8 +239,6 @@ class DataMinerService {
                 }
             }
         }
-
-        return null
     }
 
     fun calculateAdRewardWorth(ad: AdMessage): Double {

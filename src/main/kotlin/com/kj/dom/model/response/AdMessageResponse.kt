@@ -13,7 +13,7 @@ data class AdMessageResponse(
     fun toModel(): AdMessage = AdMessage(
         adId = adId,
         message = message,
-        reward = reward,
+        reward = reward.toInt(),
         expiresIn = expiresIn,
         encrypted = encrypted,
         probability = probability,
