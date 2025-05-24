@@ -1,0 +1,1466 @@
+Game: 0aQRCOWE | Turn 47 (buy) -> 48
+  {turn: 47, probability: Hmmm....} -> {turn: 48, probability: Quite likely}
+  {turn: 47, probability: Walk in the park} -> {turn: 48, probability: Piece of cake}
+  {turn: 47, probability: Risky} -> {turn: 48, probability: Gamble}
+
+Game: 0RFKSwIp | Turn 15 (buy) -> 16
+  {turn: 15, probability: Gamble} -> {turn: 16, probability: Hmmm....}
+  {turn: 15, probability: Piece of cake} -> {turn: 16, probability: Sure thing}
+  {turn: 15, probability: Rather detrimental} -> {turn: 16, probability: Risky}
+
+Game: 0RFKSwIp | Turn 26 (buy) -> 27
+  {turn: 26, probability: Quite likely} -> {turn: 27, probability: Walk in the park}
+
+Game: 0RFKSwIp | Turn 29 (buy) -> 30
+  {turn: 29, probability: Rather detrimental} -> {turn: 30, probability: Risky}
+  {turn: 29, probability: Playing with fire} -> {turn: 30, probability: Rather detrimental}
+
+Game: 0RFKSwIp | Turn 33 (buy) -> 34
+  {turn: 33, probability: Risky} -> {turn: 34, probability: Gamble}
+  {turn: 33, probability: Piece of cake} -> {turn: 34, probability: Sure thing}
+
+Game: 17bC8FSS | Turn 15 (buy) -> 16
+  {turn: 15, probability: Quite likely} -> {turn: 16, probability: Walk in the park}
+  {turn: 15, probability: Quite likely} -> {turn: 16, probability: Walk in the park}
+  {turn: 15, probability: Quite likely} -> {turn: 16, probability: Walk in the park}
+  {turn: 15, probability: Rather detrimental} -> {turn: 16, probability: Risky}
+
+Game: 17bC8FSS | Turn 32 (buy) -> 33
+  {turn: 32, probability: Gamble} -> {turn: 33, probability: Hmmm....}
+  {turn: 32, probability: Risky} -> {turn: 33, probability: Gamble}
+
+Game: 17bC8FSS | Turn 42 (buy) -> 43
+  {turn: 42, probability: Walk in the park} -> {turn: 43, probability: Piece of cake}
+  {turn: 42, probability: Risky} -> {turn: 43, probability: Gamble}
+  {turn: 42, probability: Risky} -> {turn: 43, probability: Gamble}
+
+Game: 17bC8FSS | Turn 45 (buy) -> 46
+  {turn: 45, probability: Gamble} -> {turn: 46, probability: Hmmm....}
+  {turn: 45, probability: Hmmm....} -> {turn: 46, probability: Quite likely}
+
+Game: 17bC8FSS | Turn 48 (buy) -> 49
+  {turn: 48, probability: Walk in the park} -> {turn: 49, probability: Piece of cake}
+
+Game: 17bC8FSS | Turn 51 (buy) -> 52
+  {turn: 51, probability: Hmmm....} -> {turn: 52, probability: Quite likely}
+  {turn: 51, probability: Risky} -> {turn: 52, probability: Gamble}
+  {turn: 51, probability: Rather detrimental} -> {turn: 52, probability: Risky}
+
+Game: 1bkeujYz | Turn 14 (buy) -> 15
+  {turn: 14, probability: Risky} -> {turn: 15, probability: Gamble}
+
+Game: 1bkeujYz | Turn 20 (buy) -> 21
+  {turn: 20, probability: Suicide mission} -> {turn: 21, probability: Playing with fire}
+
+Game: 1bkeujYz | Turn 24 (buy) -> 25
+  {turn: 24, probability: Risky} -> {turn: 25, probability: Gamble}
+  {turn: 24, probability: Suicide mission} -> {turn: 25, probability: Playing with fire}
+
+Game: 21LfmZ96 | Turn 14 (buy) -> 15
+  {turn: 14, probability: Walk in the park} -> {turn: 15, probability: Piece of cake}
+
+Game: 21LfmZ96 | Turn 44 (buy) -> 45
+  {turn: 44, probability: Gamble} -> {turn: 45, probability: Hmmm....}
+  {turn: 44, probability: Walk in the park} -> {turn: 45, probability: Piece of cake}
+  {turn: 44, probability: Gamble} -> {turn: 45, probability: Hmmm....}
+
+Game: 21LfmZ96 | Turn 51 (buy) -> 52
+  {turn: 51, probability: Gamble} -> {turn: 52, probability: Hmmm....}
+  {turn: 51, probability: Suicide mission} -> {turn: 52, probability: Playing with fire}
+
+Game: 3yP0q0Bs | Turn 8 (buy) -> 9
+  {turn: 8, probability: Risky} -> {turn: 9, probability: Gamble}
+
+Game: 3yP0q0Bs | Turn 30 (buy) -> 31
+  {turn: 30, probability: Gamble} -> {turn: 31, probability: Hmmm....}
+
+Game: 3yP0q0Bs | Turn 45 (buy) -> 46
+  {turn: 45, probability: Rather detrimental} -> {turn: 46, probability: Risky}
+  {turn: 45, probability: Hmmm....} -> {turn: 46, probability: Quite likely}
+  {turn: 45, probability: Walk in the park} -> {turn: 46, probability: Piece of cake}
+
+Game: 3yP0q0Bs | Turn 48 (buy) -> 49
+  {turn: 48, probability: Hmmm....} -> {turn: 49, probability: Quite likely}
+
+Game: 3yP0q0Bs | Turn 53 (buy) -> 54
+  {turn: 53, probability: Gamble} -> {turn: 54, probability: Hmmm....}
+  {turn: 53, probability: Suicide mission} -> {turn: 54, probability: Playing with fire}
+  {turn: 53, probability: Risky} -> {turn: 54, probability: Gamble}
+  {turn: 53, probability: Hmmm....} -> {turn: 54, probability: Quite likely}
+  {turn: 53, probability: Rather detrimental} -> {turn: 54, probability: Risky}
+
+Game: 3yP0q0Bs | Turn 63 (buy) -> 64
+  {turn: 63, probability: Suicide mission} -> {turn: 64, probability: Playing with fire}
+
+Game: 4QjU2iZ9 | Turn 27 (buy) -> 28
+  {turn: 27, probability: Hmmm....} -> {turn: 28, probability: Quite likely}
+  {turn: 27, probability: Risky} -> {turn: 28, probability: Gamble}
+  {turn: 27, probability: Hmmm....} -> {turn: 28, probability: Quite likely}
+
+Game: 4RnuFGTg | Turn 14 (buy) -> 15
+  {turn: 14, probability: Hmmm....} -> {turn: 15, probability: Quite likely}
+  {turn: 14, probability: Walk in the park} -> {turn: 15, probability: Piece of cake}
+  {turn: 14, probability: Walk in the park} -> {turn: 15, probability: Piece of cake}
+
+Game: 4RnuFGTg | Turn 40 (buy) -> 41
+  {turn: 40, probability: Suicide mission} -> {turn: 41, probability: Playing with fire}
+  {turn: 40, probability: Gamble} -> {turn: 41, probability: Hmmm....}
+
+Game: 4RnuFGTg | Turn 51 (buy) -> 52
+  {turn: 51, probability: Risky} -> {turn: 52, probability: Gamble}
+  {turn: 51, probability: Hmmm....} -> {turn: 52, probability: Quite likely}
+
+Game: 4RnuFGTg | Turn 74 (buy) -> 75
+  {turn: 74, probability: Rather detrimental} -> {turn: 75, probability: Risky}
+
+Game: 5z5oYB9E | Turn 9 (buy) -> 10
+  {turn: 9, probability: Gamble} -> {turn: 10, probability: Hmmm....}
+  {turn: 9, probability: Quite likely} -> {turn: 10, probability: Walk in the park}
+  {turn: 9, probability: Quite likely} -> {turn: 10, probability: Walk in the park}
+  {turn: 9, probability: Gamble} -> {turn: 10, probability: Hmmm....}
+
+Game: 5z5oYB9E | Turn 17 (buy) -> 18
+  {turn: 17, probability: Piece of cake} -> {turn: 18, probability: Sure thing}
+  {turn: 17, probability: Rather detrimental} -> {turn: 18, probability: Risky}
+
+Game: 6ouO7ZZ9 | Turn 16 (buy) -> 17
+  {turn: 16, probability: Hmmm....} -> {turn: 17, probability: Quite likely}
+
+Game: 6ouO7ZZ9 | Turn 24 (buy) -> 25
+  {turn: 24, probability: Rather detrimental} -> {turn: 25, probability: Risky}
+  {turn: 24, probability: Piece of cake} -> {turn: 25, probability: Sure thing}
+  {turn: 24, probability: Hmmm....} -> {turn: 25, probability: Quite likely}
+
+Game: 6ouO7ZZ9 | Turn 38 (buy) -> 39
+  {turn: 38, probability: Quite likely} -> {turn: 39, probability: Walk in the park}
+  {turn: 38, probability: Walk in the park} -> {turn: 39, probability: Piece of cake}
+  {turn: 38, probability: Risky} -> {turn: 39, probability: Gamble}
+
+Game: 6ouO7ZZ9 | Turn 44 (buy) -> 45
+  {turn: 44, probability: Piece of cake} -> {turn: 45, probability: Sure thing}
+  {turn: 44, probability: Walk in the park} -> {turn: 45, probability: Piece of cake}
+  {turn: 44, probability: Walk in the park} -> {turn: 45, probability: Piece of cake}
+
+Game: 6ouO7ZZ9 | Turn 46 (buy) -> 47
+  {turn: 46, probability: Hmmm....} -> {turn: 47, probability: Quite likely}
+
+Game: 6ouO7ZZ9 | Turn 54 (buy) -> 55
+  {turn: 54, probability: Quite likely} -> {turn: 55, probability: Walk in the park}
+  {turn: 54, probability: Hmmm....} -> {turn: 55, probability: Quite likely}
+
+Game: 6ouO7ZZ9 | Turn 57 (buy) -> 58
+  {turn: 57, probability: Suicide mission} -> {turn: 58, probability: Playing with fire}
+  {turn: 57, probability: Risky} -> {turn: 58, probability: Gamble}
+
+Game: 93XqvEp4 | Turn 14 (buy) -> 15
+  {turn: 14, probability: Walk in the park} -> {turn: 15, probability: Piece of cake}
+
+Game: 93XqvEp4 | Turn 20 (buy) -> 21
+  {turn: 20, probability: Rather detrimental} -> {turn: 21, probability: Risky}
+  {turn: 20, probability: Gamble} -> {turn: 21, probability: Hmmm....}
+
+Game: 93XqvEp4 | Turn 25 (buy) -> 26
+  {turn: 25, probability: Hmmm....} -> {turn: 26, probability: Quite likely}
+  {turn: 25, probability: Gamble} -> {turn: 26, probability: Hmmm....}
+  {turn: 25, probability: Risky} -> {turn: 26, probability: Gamble}
+
+Game: 93XqvEp4 | Turn 37 (buy) -> 38
+  {turn: 37, probability: Gamble} -> {turn: 38, probability: Hmmm....}
+
+Game: 93XqvEp4 | Turn 40 (buy) -> 41
+  {turn: 40, probability: Hmmm....} -> {turn: 41, probability: Quite likely}
+  {turn: 40, probability: Risky} -> {turn: 41, probability: Gamble}
+  {turn: 40, probability: Walk in the park} -> {turn: 41, probability: Piece of cake}
+
+Game: 93XqvEp4 | Turn 42 (buy) -> 43
+  {turn: 42, probability: Hmmm....} -> {turn: 43, probability: Quite likely}
+
+Game: 93XqvEp4 | Turn 45 (buy) -> 46
+  {turn: 45, probability: Quite likely} -> {turn: 46, probability: Walk in the park}
+
+Game: 93XqvEp4 | Turn 50 (buy) -> 51
+  {turn: 50, probability: Risky} -> {turn: 51, probability: Gamble}
+
+Game: 9LrzVDMk | Turn 11 (buy) -> 12
+  {turn: 11, probability: Hmmm....} -> {turn: 12, probability: Quite likely}
+  {turn: 11, probability: Rather detrimental} -> {turn: 12, probability: Risky}
+  {turn: 11, probability: Hmmm....} -> {turn: 12, probability: Quite likely}
+  {turn: 11, probability: Risky} -> {turn: 12, probability: Gamble}
+
+Game: 9LrzVDMk | Turn 18 (buy) -> 19
+  {turn: 18, probability: Quite likely} -> {turn: 19, probability: Walk in the park}
+  {turn: 18, probability: Rather detrimental} -> {turn: 19, probability: Risky}
+
+Game: 9LrzVDMk | Turn 22 (buy) -> 23
+  {turn: 22, probability: Hmmm....} -> {turn: 23, probability: Quite likely}
+  {turn: 22, probability: Quite likely} -> {turn: 23, probability: Walk in the park}
+  {turn: 22, probability: Playing with fire} -> {turn: 23, probability: Rather detrimental}
+
+Game: 9LrzVDMk | Turn 28 (buy) -> 29
+  {turn: 28, probability: Gamble} -> {turn: 29, probability: Hmmm....}
+  {turn: 28, probability: Rather detrimental} -> {turn: 29, probability: Risky}
+
+Game: 9LrzVDMk | Turn 44 (buy) -> 45
+  {turn: 44, probability: Walk in the park} -> {turn: 45, probability: Piece of cake}
+  {turn: 44, probability: Quite likely} -> {turn: 45, probability: Walk in the park}
+
+Game: 9LrzVDMk | Turn 56 (buy) -> 57
+  {turn: 56, probability: Risky} -> {turn: 57, probability: Gamble}
+  {turn: 56, probability: Quite likely} -> {turn: 57, probability: Walk in the park}
+  {turn: 56, probability: Playing with fire} -> {turn: 57, probability: Rather detrimental}
+
+Game: 9LrzVDMk | Turn 65 (buy) -> 66
+  {turn: 65, probability: Risky} -> {turn: 66, probability: Gamble}
+
+Game: b144Rn96 | Turn 13 (buy) -> 14
+  {turn: 13, probability: Gamble} -> {turn: 14, probability: Hmmm....}
+
+Game: b144Rn96 | Turn 22 (buy) -> 23
+  {turn: 22, probability: Piece of cake} -> {turn: 23, probability: Sure thing}
+  {turn: 22, probability: Quite likely} -> {turn: 23, probability: Walk in the park}
+  {turn: 22, probability: Rather detrimental} -> {turn: 23, probability: Risky}
+
+Game: b144Rn96 | Turn 37 (buy) -> 38
+  {turn: 37, probability: Walk in the park} -> {turn: 38, probability: Piece of cake}
+  {turn: 37, probability: Walk in the park} -> {turn: 38, probability: Piece of cake}
+
+Game: b144Rn96 | Turn 40 (buy) -> 41
+  {turn: 40, probability: Risky} -> {turn: 41, probability: Gamble}
+  {turn: 40, probability: Risky} -> {turn: 41, probability: Gamble}
+  {turn: 40, probability: Walk in the park} -> {turn: 41, probability: Piece of cake}
+
+Game: b144Rn96 | Turn 42 (buy) -> 43
+  {turn: 42, probability: Piece of cake} -> {turn: 43, probability: Sure thing}
+
+Game: b144Rn96 | Turn 45 (buy) -> 46
+  {turn: 45, probability: Rather detrimental} -> {turn: 46, probability: Risky}
+
+Game: b144Rn96 | Turn 47 (buy) -> 48
+  {turn: 47, probability: Rather detrimental} -> {turn: 48, probability: Risky}
+
+Game: b144Rn96 | Turn 52 (buy) -> 53
+  {turn: 52, probability: Walk in the park} -> {turn: 53, probability: Piece of cake}
+
+Game: b144Rn96 | Turn 59 (buy) -> 60
+  {turn: 59, probability: Gamble} -> {turn: 60, probability: Hmmm....}
+
+Game: b144Rn96 | Turn 68 (buy) -> 69
+  {turn: 68, probability: Hmmm....} -> {turn: 69, probability: Quite likely}
+
+Game: bfVWUmsd | Turn 31 (buy) -> 32
+  {turn: 31, probability: Quite likely} -> {turn: 32, probability: Walk in the park}
+
+Game: bfVWUmsd | Turn 34 (buy) -> 35
+  {turn: 34, probability: Playing with fire} -> {turn: 35, probability: Rather detrimental}
+  {turn: 34, probability: Hmmm....} -> {turn: 35, probability: Quite likely}
+  {turn: 34, probability: Rather detrimental} -> {turn: 35, probability: Risky}
+  {turn: 34, probability: Walk in the park} -> {turn: 35, probability: Piece of cake}
+  {turn: 34, probability: Gamble} -> {turn: 35, probability: Hmmm....}
+
+Game: bfVWUmsd | Turn 43 (buy) -> 44
+  {turn: 43, probability: Rather detrimental} -> {turn: 44, probability: Risky}
+  {turn: 43, probability: Risky} -> {turn: 44, probability: Gamble}
+  {turn: 43, probability: Rather detrimental} -> {turn: 44, probability: Risky}
+  {turn: 43, probability: Suicide mission} -> {turn: 44, probability: Playing with fire}
+  {turn: 43, probability: Walk in the park} -> {turn: 44, probability: Piece of cake}
+
+Game: bfVWUmsd | Turn 48 (buy) -> 49
+  {turn: 48, probability: Hmmm....} -> {turn: 49, probability: Quite likely}
+  {turn: 48, probability: Hmmm....} -> {turn: 49, probability: Quite likely}
+  {turn: 48, probability: Hmmm....} -> {turn: 49, probability: Quite likely}
+
+Game: bfVWUmsd | Turn 56 (buy) -> 57
+  {turn: 56, probability: Gamble} -> {turn: 57, probability: Hmmm....}
+  {turn: 56, probability: Rather detrimental} -> {turn: 57, probability: Risky}
+
+Game: Bpw0ZrXP | Turn 11 (buy) -> 12
+  {turn: 11, probability: Rather detrimental} -> {turn: 12, probability: Risky}
+
+Game: Bpw0ZrXP | Turn 40 (buy) -> 41
+  {turn: 40, probability: Hmmm....} -> {turn: 41, probability: Quite likely}
+  {turn: 40, probability: Risky} -> {turn: 41, probability: Gamble}
+
+Game: Bpw0ZrXP | Turn 43 (buy) -> 44
+  {turn: 43, probability: Risky} -> {turn: 44, probability: Gamble}
+  {turn: 43, probability: Playing with fire} -> {turn: 44, probability: Rather detrimental}
+  {turn: 43, probability: Quite likely} -> {turn: 44, probability: Walk in the park}
+
+Game: bxHg1zZb | Turn 12 (buy) -> 13
+  {turn: 12, probability: Rather detrimental} -> {turn: 13, probability: Risky}
+  {turn: 12, probability: Walk in the park} -> {turn: 13, probability: Piece of cake}
+
+Game: bXwbo78T | Turn 9 (buy) -> 10
+  {turn: 9, probability: Quite likely} -> {turn: 10, probability: Walk in the park}
+
+Game: bXwbo78T | Turn 18 (buy) -> 19
+  {turn: 18, probability: Gamble} -> {turn: 19, probability: Hmmm....}
+  {turn: 18, probability: Risky} -> {turn: 19, probability: Gamble}
+  {turn: 18, probability: Gamble} -> {turn: 19, probability: Hmmm....}
+  {turn: 18, probability: Walk in the park} -> {turn: 19, probability: Piece of cake}
+
+Game: bXwbo78T | Turn 22 (buy) -> 23
+  {turn: 22, probability: Playing with fire} -> {turn: 23, probability: Rather detrimental}
+
+Game: bXwbo78T | Turn 24 (buy) -> 25
+  {turn: 24, probability: Quite likely} -> {turn: 25, probability: Walk in the park}
+  {turn: 24, probability: Hmmm....} -> {turn: 25, probability: Quite likely}
+  {turn: 24, probability: Rather detrimental} -> {turn: 25, probability: Risky}
+
+Game: bXwbo78T | Turn 40 (buy) -> 41
+  {turn: 40, probability: Risky} -> {turn: 41, probability: Gamble}
+
+Game: ccESb1K5 | Turn 13 (buy) -> 14
+  {turn: 13, probability: Rather detrimental} -> {turn: 14, probability: Risky}
+  {turn: 13, probability: Walk in the park} -> {turn: 14, probability: Piece of cake}
+  {turn: 13, probability: Suicide mission} -> {turn: 14, probability: Playing with fire}
+  {turn: 13, probability: Walk in the park} -> {turn: 14, probability: Piece of cake}
+
+Game: ccESb1K5 | Turn 18 (buy) -> 19
+  {turn: 18, probability: Quite likely} -> {turn: 19, probability: Walk in the park}
+
+Game: CdgniCqR | Turn 14 (buy) -> 15
+  {turn: 14, probability: Risky} -> {turn: 15, probability: Gamble}
+  {turn: 14, probability: Suicide mission} -> {turn: 15, probability: Playing with fire}
+
+Game: ceCg7qK1 | Turn 16 (buy) -> 17
+  {turn: 16, probability: Risky} -> {turn: 17, probability: Gamble}
+
+Game: ceCg7qK1 | Turn 22 (buy) -> 23
+  {turn: 22, probability: Hmmm....} -> {turn: 23, probability: Quite likely}
+  {turn: 22, probability: Playing with fire} -> {turn: 23, probability: Rather detrimental}
+
+Game: csiYh5fX | Turn 17 (buy) -> 18
+  {turn: 17, probability: Walk in the park} -> {turn: 18, probability: Piece of cake}
+  {turn: 17, probability: Playing with fire} -> {turn: 18, probability: Rather detrimental}
+  {turn: 17, probability: Quite likely} -> {turn: 18, probability: Walk in the park}
+
+Game: csiYh5fX | Turn 30 (buy) -> 31
+  {turn: 30, probability: Rather detrimental} -> {turn: 31, probability: Risky}
+
+Game: csiYh5fX | Turn 39 (buy) -> 40
+  {turn: 39, probability: Piece of cake} -> {turn: 40, probability: Sure thing}
+  {turn: 39, probability: Hmmm....} -> {turn: 40, probability: Quite likely}
+
+Game: csiYh5fX | Turn 43 (buy) -> 44
+  {turn: 43, probability: Risky} -> {turn: 44, probability: Gamble}
+
+Game: csiYh5fX | Turn 48 (buy) -> 49
+  {turn: 48, probability: Quite likely} -> {turn: 49, probability: Walk in the park}
+  {turn: 48, probability: Rather detrimental} -> {turn: 49, probability: Risky}
+  {turn: 48, probability: Risky} -> {turn: 49, probability: Gamble}
+  {turn: 48, probability: Quite likely} -> {turn: 49, probability: Walk in the park}
+
+Game: csiYh5fX | Turn 63 (buy) -> 64
+  {turn: 63, probability: Suicide mission} -> {turn: 64, probability: Playing with fire}
+  {turn: 63, probability: Hmmm....} -> {turn: 64, probability: Quite likely}
+
+Game: dArMljec | Turn 12 (buy) -> 13
+  {turn: 12, probability: Hmmm....} -> {turn: 13, probability: Quite likely}
+  {turn: 12, probability: Rather detrimental} -> {turn: 13, probability: Risky}
+  {turn: 12, probability: Rather detrimental} -> {turn: 13, probability: Risky}
+  {turn: 12, probability: Quite likely} -> {turn: 13, probability: Walk in the park}
+  {turn: 12, probability: Gamble} -> {turn: 13, probability: Hmmm....}
+
+Game: dArMljec | Turn 20 (buy) -> 21
+  {turn: 20, probability: Playing with fire} -> {turn: 21, probability: Rather detrimental}
+  {turn: 20, probability: Suicide mission} -> {turn: 21, probability: Playing with fire}
+
+Game: dArMljec | Turn 23 (buy) -> 24
+  {turn: 23, probability: Hmmm....} -> {turn: 24, probability: Quite likely}
+  {turn: 23, probability: Quite likely} -> {turn: 24, probability: Walk in the park}
+
+Game: dArMljec | Turn 26 (buy) -> 27
+  {turn: 26, probability: Risky} -> {turn: 27, probability: Gamble}
+  {turn: 26, probability: Playing with fire} -> {turn: 27, probability: Rather detrimental}
+
+Game: dArMljec | Turn 41 (buy) -> 42
+  {turn: 41, probability: Rather detrimental} -> {turn: 42, probability: Risky}
+
+Game: dArMljec | Turn 46 (buy) -> 47
+  {turn: 46, probability: Quite likely} -> {turn: 47, probability: Walk in the park}
+
+Game: dArMljec | Turn 51 (buy) -> 52
+  {turn: 51, probability: Rather detrimental} -> {turn: 52, probability: Risky}
+  {turn: 51, probability: Playing with fire} -> {turn: 52, probability: Rather detrimental}
+  {turn: 51, probability: Quite likely} -> {turn: 52, probability: Walk in the park}
+
+Game: dAtw1Vab | Turn 9 (buy) -> 10
+  {turn: 9, probability: Quite likely} -> {turn: 10, probability: Walk in the park}
+  {turn: 9, probability: Gamble} -> {turn: 10, probability: Hmmm....}
+  {turn: 9, probability: Risky} -> {turn: 10, probability: Gamble}
+
+Game: DfKBS0rV | Turn 8 (buy) -> 9
+  {turn: 8, probability: Risky} -> {turn: 9, probability: Gamble}
+
+Game: DfKBS0rV | Turn 22 (buy) -> 23
+  {turn: 22, probability: Quite likely} -> {turn: 23, probability: Walk in the park}
+  {turn: 22, probability: Rather detrimental} -> {turn: 23, probability: Risky}
+
+Game: dqTXq46c | Turn 12 (buy) -> 13
+  {turn: 12, probability: Hmmm....} -> {turn: 13, probability: Quite likely}
+  {turn: 12, probability: Quite likely} -> {turn: 13, probability: Walk in the park}
+  {turn: 12, probability: Risky} -> {turn: 13, probability: Gamble}
+  {turn: 12, probability: Walk in the park} -> {turn: 13, probability: Piece of cake}
+  {turn: 12, probability: Rather detrimental} -> {turn: 13, probability: Risky}
+
+Game: dtigzagt | Turn 9 (buy) -> 10
+  {turn: 9, probability: Suicide mission} -> {turn: 10, probability: Playing with fire}
+  {turn: 9, probability: Walk in the park} -> {turn: 10, probability: Piece of cake}
+  {turn: 9, probability: Walk in the park} -> {turn: 10, probability: Piece of cake}
+  {turn: 9, probability: Walk in the park} -> {turn: 10, probability: Piece of cake}
+
+Game: e9TC75SB | Turn 10 (buy) -> 11
+  {turn: 10, probability: Gamble} -> {turn: 11, probability: Hmmm....}
+
+Game: e9TC75SB | Turn 40 (buy) -> 41
+  {turn: 40, probability: Walk in the park} -> {turn: 41, probability: Piece of cake}
+  {turn: 40, probability: Hmmm....} -> {turn: 41, probability: Quite likely}
+  {turn: 40, probability: Quite likely} -> {turn: 41, probability: Walk in the park}
+
+Game: e9TC75SB | Turn 43 (buy) -> 44
+  {turn: 43, probability: Quite likely} -> {turn: 44, probability: Walk in the park}
+  {turn: 43, probability: Hmmm....} -> {turn: 44, probability: Quite likely}
+
+Game: e9TC75SB | Turn 54 (buy) -> 55
+  {turn: 54, probability: Suicide mission} -> {turn: 55, probability: Playing with fire}
+  {turn: 54, probability: Risky} -> {turn: 55, probability: Gamble}
+
+Game: f9Qo6cp5 | Turn 9 (buy) -> 10
+  {turn: 9, probability: Gamble} -> {turn: 10, probability: Hmmm....}
+  {turn: 9, probability: Walk in the park} -> {turn: 10, probability: Piece of cake}
+  {turn: 9, probability: Walk in the park} -> {turn: 10, probability: Piece of cake}
+  {turn: 9, probability: Rather detrimental} -> {turn: 10, probability: Risky}
+
+Game: f9Qo6cp5 | Turn 18 (buy) -> 19
+  {turn: 18, probability: Quite likely} -> {turn: 19, probability: Walk in the park}
+  {turn: 18, probability: Risky} -> {turn: 19, probability: Gamble}
+
+Game: FblmY7tH | Turn 15 (buy) -> 16
+  {turn: 15, probability: Quite likely} -> {turn: 16, probability: Walk in the park}
+  {turn: 15, probability: Quite likely} -> {turn: 16, probability: Walk in the park}
+  {turn: 15, probability: Gamble} -> {turn: 16, probability: Hmmm....}
+
+Game: FblmY7tH | Turn 23 (buy) -> 24
+  {turn: 23, probability: Risky} -> {turn: 24, probability: Gamble}
+
+Game: FblmY7tH | Turn 26 (buy) -> 27
+  {turn: 26, probability: Playing with fire} -> {turn: 27, probability: Rather detrimental}
+  {turn: 26, probability: Risky} -> {turn: 27, probability: Gamble}
+
+Game: FblmY7tH | Turn 45 (buy) -> 46
+  {turn: 45, probability: Risky} -> {turn: 46, probability: Gamble}
+  {turn: 45, probability: Gamble} -> {turn: 46, probability: Hmmm....}
+  {turn: 45, probability: Gamble} -> {turn: 46, probability: Hmmm....}
+  {turn: 45, probability: Hmmm....} -> {turn: 46, probability: Quite likely}
+  {turn: 45, probability: Gamble} -> {turn: 46, probability: Hmmm....}
+
+Game: FblmY7tH | Turn 63 (buy) -> 64
+  {turn: 63, probability: Playing with fire} -> {turn: 64, probability: Rather detrimental}
+  {turn: 63, probability: Playing with fire} -> {turn: 64, probability: Rather detrimental}
+  {turn: 63, probability: Playing with fire} -> {turn: 64, probability: Rather detrimental}
+
+Game: Gbj6dU9b | Turn 52 (buy) -> 53
+  {turn: 52, probability: Playing with fire} -> {turn: 53, probability: Rather detrimental}
+  {turn: 52, probability: Quite likely} -> {turn: 53, probability: Walk in the park}
+  {turn: 52, probability: Playing with fire} -> {turn: 53, probability: Rather detrimental}
+  {turn: 52, probability: Playing with fire} -> {turn: 53, probability: Rather detrimental}
+
+Game: gKDAJ6JU | Turn 17 (buy) -> 18
+  {turn: 17, probability: Rather detrimental} -> {turn: 18, probability: Risky}
+  {turn: 17, probability: Gamble} -> {turn: 18, probability: Hmmm....}
+  {turn: 17, probability: Hmmm....} -> {turn: 18, probability: Quite likely}
+  {turn: 17, probability: Piece of cake} -> {turn: 18, probability: Sure thing}
+
+Game: gslCnIPB | Turn 23 (buy) -> 24
+  {turn: 23, probability: Walk in the park} -> {turn: 24, probability: Piece of cake}
+
+Game: gslCnIPB | Turn 60 (buy) -> 61
+  {turn: 60, probability: Rather detrimental} -> {turn: 61, probability: Risky}
+
+Game: gUWyEnd3 | Turn 15 (buy) -> 16
+  {turn: 15, probability: Piece of cake} -> {turn: 16, probability: Sure thing}
+  {turn: 15, probability: Quite likely} -> {turn: 16, probability: Walk in the park}
+  {turn: 15, probability: Risky} -> {turn: 16, probability: Gamble}
+
+Game: gUWyEnd3 | Turn 49 (buy) -> 50
+  {turn: 49, probability: Quite likely} -> {turn: 50, probability: Walk in the park}
+
+Game: gZBwRMWa | Turn 9 (buy) -> 10
+  {turn: 9, probability: Risky} -> {turn: 10, probability: Gamble}
+
+Game: gZBwRMWa | Turn 44 (buy) -> 45
+  {turn: 44, probability: Playing with fire} -> {turn: 45, probability: Rather detrimental}
+  {turn: 44, probability: Hmmm....} -> {turn: 45, probability: Quite likely}
+  {turn: 44, probability: Walk in the park} -> {turn: 45, probability: Piece of cake}
+  {turn: 44, probability: Rather detrimental} -> {turn: 45, probability: Risky}
+  {turn: 44, probability: Rather detrimental} -> {turn: 45, probability: Risky}
+  {turn: 44, probability: Rather detrimental} -> {turn: 45, probability: Risky}
+
+Game: gZBwRMWa | Turn 48 (buy) -> 49
+  {turn: 48, probability: Hmmm....} -> {turn: 49, probability: Quite likely}
+
+Game: gZBwRMWa | Turn 56 (buy) -> 57
+  {turn: 56, probability: Hmmm....} -> {turn: 57, probability: Quite likely}
+  {turn: 56, probability: Playing with fire} -> {turn: 57, probability: Rather detrimental}
+
+Game: H5IbocgR | Turn 11 (buy) -> 12
+  {turn: 11, probability: Rather detrimental} -> {turn: 12, probability: Risky}
+  {turn: 11, probability: Risky} -> {turn: 12, probability: Gamble}
+
+Game: hKrtYGiI | Turn 9 (buy) -> 10
+  {turn: 9, probability: Quite likely} -> {turn: 10, probability: Walk in the park}
+  {turn: 9, probability: Gamble} -> {turn: 10, probability: Hmmm....}
+  {turn: 9, probability: Suicide mission} -> {turn: 10, probability: Playing with fire}
+
+Game: hKrtYGiI | Turn 17 (buy) -> 18
+  {turn: 17, probability: Hmmm....} -> {turn: 18, probability: Quite likely}
+  {turn: 17, probability: Gamble} -> {turn: 18, probability: Hmmm....}
+
+Game: hKrtYGiI | Turn 43 (buy) -> 44
+  {turn: 43, probability: Gamble} -> {turn: 44, probability: Hmmm....}
+  {turn: 43, probability: Quite likely} -> {turn: 44, probability: Walk in the park}
+  {turn: 43, probability: Rather detrimental} -> {turn: 44, probability: Risky}
+
+Game: HkVJEzP3 | Turn 17 (buy) -> 18
+  {turn: 17, probability: Rather detrimental} -> {turn: 18, probability: Risky}
+  {turn: 17, probability: Piece of cake} -> {turn: 18, probability: Sure thing}
+
+Game: Hr2f2kcL | Turn 8 (buy) -> 9
+  {turn: 8, probability: Hmmm....} -> {turn: 9, probability: Quite likely}
+  {turn: 8, probability: Suicide mission} -> {turn: 9, probability: Playing with fire}
+  {turn: 8, probability: Quite likely} -> {turn: 9, probability: Walk in the park}
+
+Game: Hr2f2kcL | Turn 21 (buy) -> 22
+  {turn: 21, probability: Hmmm....} -> {turn: 22, probability: Quite likely}
+  {turn: 21, probability: Walk in the park} -> {turn: 22, probability: Piece of cake}
+
+Game: Hr2f2kcL | Turn 39 (buy) -> 40
+  {turn: 39, probability: Gamble} -> {turn: 40, probability: Hmmm....}
+  {turn: 39, probability: Walk in the park} -> {turn: 40, probability: Piece of cake}
+
+Game: Hr2f2kcL | Turn 42 (buy) -> 43
+  {turn: 42, probability: Risky} -> {turn: 43, probability: Gamble}
+
+Game: Hr2f2kcL | Turn 47 (buy) -> 48
+  {turn: 47, probability: Gamble} -> {turn: 48, probability: Hmmm....}
+  {turn: 47, probability: Hmmm....} -> {turn: 48, probability: Quite likely}
+
+Game: Hr2f2kcL | Turn 52 (buy) -> 53
+  {turn: 52, probability: Hmmm....} -> {turn: 53, probability: Quite likely}
+  {turn: 52, probability: Gamble} -> {turn: 53, probability: Hmmm....}
+
+Game: hRhGmyj3 | Turn 43 (buy) -> 44
+  {turn: 43, probability: Gamble} -> {turn: 44, probability: Hmmm....}
+  {turn: 43, probability: Gamble} -> {turn: 44, probability: Hmmm....}
+
+Game: hRhGmyj3 | Turn 46 (buy) -> 47
+  {turn: 46, probability: Gamble} -> {turn: 47, probability: Hmmm....}
+  {turn: 46, probability: Playing with fire} -> {turn: 47, probability: Rather detrimental}
+  {turn: 46, probability: Gamble} -> {turn: 47, probability: Hmmm....}
+
+Game: hRhGmyj3 | Turn 51 (buy) -> 52
+  {turn: 51, probability: Hmmm....} -> {turn: 52, probability: Quite likely}
+  {turn: 51, probability: Gamble} -> {turn: 52, probability: Hmmm....}
+
+Game: hRhGmyj3 | Turn 54 (buy) -> 55
+  {turn: 54, probability: Risky} -> {turn: 55, probability: Gamble}
+  {turn: 54, probability: Playing with fire} -> {turn: 55, probability: Rather detrimental}
+
+Game: hRhGmyj3 | Turn 56 (buy) -> 57
+  {turn: 56, probability: Hmmm....} -> {turn: 57, probability: Quite likely}
+
+Game: Hz5Z94G0 | Turn 52 (buy) -> 53
+  {turn: 52, probability: Gamble} -> {turn: 53, probability: Hmmm....}
+
+Game: Hz5Z94G0 | Turn 67 (buy) -> 68
+  {turn: 67, probability: Impossible} -> {turn: 68, probability: Suicide mission}
+
+Game: itd2hz6T | Turn 25 (buy) -> 26
+  {turn: 25, probability: Quite likely} -> {turn: 26, probability: Walk in the park}
+  {turn: 25, probability: Gamble} -> {turn: 26, probability: Hmmm....}
+  {turn: 25, probability: Hmmm....} -> {turn: 26, probability: Quite likely}
+  {turn: 25, probability: Rather detrimental} -> {turn: 26, probability: Risky}
+
+Game: itd2hz6T | Turn 45 (buy) -> 46
+  {turn: 45, probability: Gamble} -> {turn: 46, probability: Hmmm....}
+  {turn: 45, probability: Hmmm....} -> {turn: 46, probability: Quite likely}
+  {turn: 45, probability: Hmmm....} -> {turn: 46, probability: Quite likely}
+  {turn: 45, probability: Gamble} -> {turn: 46, probability: Hmmm....}
+  {turn: 45, probability: Suicide mission} -> {turn: 46, probability: Playing with fire}
+
+Game: itd2hz6T | Turn 51 (buy) -> 52
+  {turn: 51, probability: Quite likely} -> {turn: 52, probability: Walk in the park}
+  {turn: 51, probability: Playing with fire} -> {turn: 52, probability: Rather detrimental}
+
+Game: itd2hz6T | Turn 59 (buy) -> 60
+  {turn: 59, probability: Risky} -> {turn: 60, probability: Gamble}
+  {turn: 59, probability: Gamble} -> {turn: 60, probability: Hmmm....}
+  {turn: 59, probability: Gamble} -> {turn: 60, probability: Hmmm....}
+
+Game: itd2hz6T | Turn 71 (buy) -> 72
+  {turn: 71, probability: Playing with fire} -> {turn: 72, probability: Rather detrimental}
+  {turn: 71, probability: Rather detrimental} -> {turn: 72, probability: Risky}
+  {turn: 71, probability: Suicide mission} -> {turn: 72, probability: Playing with fire}
+
+Game: jcfHxvXa | Turn 11 (buy) -> 12
+  {turn: 11, probability: Hmmm....} -> {turn: 12, probability: Quite likely}
+  {turn: 11, probability: Hmmm....} -> {turn: 12, probability: Quite likely}
+
+Game: JIlPI0lK | Turn 17 (buy) -> 18
+  {turn: 17, probability: Risky} -> {turn: 18, probability: Gamble}
+  {turn: 17, probability: Piece of cake} -> {turn: 18, probability: Sure thing}
+
+Game: jOeF74pK | Turn 31 (buy) -> 32
+  {turn: 31, probability: Quite likely} -> {turn: 32, probability: Walk in the park}
+
+Game: jOeF74pK | Turn 36 (buy) -> 37
+  {turn: 36, probability: Gamble} -> {turn: 37, probability: Hmmm....}
+  {turn: 36, probability: Risky} -> {turn: 37, probability: Gamble}
+
+Game: jOeF74pK | Turn 55 (buy) -> 56
+  {turn: 55, probability: Suicide mission} -> {turn: 56, probability: Playing with fire}
+  {turn: 55, probability: Quite likely} -> {turn: 56, probability: Walk in the park}
+  {turn: 55, probability: Suicide mission} -> {turn: 56, probability: Playing with fire}
+
+Game: JRr2nQRn | Turn 17 (buy) -> 18
+  {turn: 17, probability: Risky} -> {turn: 18, probability: Gamble}
+  {turn: 17, probability: Gamble} -> {turn: 18, probability: Hmmm....}
+  {turn: 17, probability: Risky} -> {turn: 18, probability: Gamble}
+  {turn: 17, probability: Hmmm....} -> {turn: 18, probability: Quite likely}
+
+Game: JRr2nQRn | Turn 30 (buy) -> 31
+  {turn: 30, probability: Risky} -> {turn: 31, probability: Gamble}
+  {turn: 30, probability: Rather detrimental} -> {turn: 31, probability: Risky}
+  {turn: 30, probability: Walk in the park} -> {turn: 31, probability: Piece of cake}
+  {turn: 30, probability: Risky} -> {turn: 31, probability: Gamble}
+  {turn: 30, probability: Playing with fire} -> {turn: 31, probability: Rather detrimental}
+  {turn: 30, probability: Hmmm....} -> {turn: 31, probability: Quite likely}
+
+Game: JRr2nQRn | Turn 45 (buy) -> 46
+  {turn: 45, probability: Quite likely} -> {turn: 46, probability: Walk in the park}
+  {turn: 45, probability: Risky} -> {turn: 46, probability: Gamble}
+  {turn: 45, probability: Suicide mission} -> {turn: 46, probability: Playing with fire}
+
+Game: JtKBMXZb | Turn 13 (buy) -> 14
+  {turn: 13, probability: Gamble} -> {turn: 14, probability: Hmmm....}
+
+Game: JtKBMXZb | Turn 32 (buy) -> 33
+  {turn: 32, probability: Piece of cake} -> {turn: 33, probability: Sure thing}
+
+Game: JtKBMXZb | Turn 49 (buy) -> 50
+  {turn: 49, probability: Quite likely} -> {turn: 50, probability: Walk in the park}
+  {turn: 49, probability: Quite likely} -> {turn: 50, probability: Walk in the park}
+  {turn: 49, probability: Risky} -> {turn: 50, probability: Gamble}
+  {turn: 49, probability: Rather detrimental} -> {turn: 50, probability: Risky}
+
+Game: jvDywY0V | Turn 16 (buy) -> 17
+  {turn: 16, probability: Rather detrimental} -> {turn: 17, probability: Risky}
+  {turn: 16, probability: Quite likely} -> {turn: 17, probability: Walk in the park}
+
+Game: jvDywY0V | Turn 29 (buy) -> 30
+  {turn: 29, probability: Walk in the park} -> {turn: 30, probability: Piece of cake}
+
+Game: jvDywY0V | Turn 38 (buy) -> 39
+  {turn: 38, probability: Gamble} -> {turn: 39, probability: Hmmm....}
+  {turn: 38, probability: Gamble} -> {turn: 39, probability: Hmmm....}
+  {turn: 38, probability: Hmmm....} -> {turn: 39, probability: Quite likely}
+
+Game: jvDywY0V | Turn 41 (buy) -> 42
+  {turn: 41, probability: Gamble} -> {turn: 42, probability: Hmmm....}
+
+Game: jvDywY0V | Turn 49 (buy) -> 50
+  {turn: 49, probability: Gamble} -> {turn: 50, probability: Hmmm....}
+
+Game: jvDywY0V | Turn 59 (buy) -> 60
+  {turn: 59, probability: Risky} -> {turn: 60, probability: Gamble}
+  {turn: 59, probability: Suicide mission} -> {turn: 60, probability: Playing with fire}
+  {turn: 59, probability: Suicide mission} -> {turn: 60, probability: Playing with fire}
+
+Game: JykXWAtH | Turn 19 (buy) -> 20
+  {turn: 19, probability: Playing with fire} -> {turn: 20, probability: Rather detrimental}
+  {turn: 19, probability: Gamble} -> {turn: 20, probability: Hmmm....}
+
+Game: JykXWAtH | Turn 39 (buy) -> 40
+  {turn: 39, probability: Hmmm....} -> {turn: 40, probability: Quite likely}
+  {turn: 39, probability: Gamble} -> {turn: 40, probability: Hmmm....}
+  {turn: 39, probability: Hmmm....} -> {turn: 40, probability: Quite likely}
+
+Game: JykXWAtH | Turn 43 (buy) -> 44
+  {turn: 43, probability: Hmmm....} -> {turn: 44, probability: Quite likely}
+
+Game: JykXWAtH | Turn 46 (buy) -> 47
+  {turn: 46, probability: Gamble} -> {turn: 47, probability: Hmmm....}
+  {turn: 46, probability: Risky} -> {turn: 47, probability: Gamble}
+  {turn: 46, probability: Risky} -> {turn: 47, probability: Gamble}
+
+Game: JykXWAtH | Turn 52 (buy) -> 53
+  {turn: 52, probability: Hmmm....} -> {turn: 53, probability: Quite likely}
+  {turn: 52, probability: Suicide mission} -> {turn: 53, probability: Playing with fire}
+  {turn: 52, probability: Suicide mission} -> {turn: 53, probability: Playing with fire}
+  {turn: 52, probability: Rather detrimental} -> {turn: 53, probability: Risky}
+
+Game: KRiiotQt | Turn 7 (buy) -> 8
+  {turn: 7, probability: Rather detrimental} -> {turn: 8, probability: Risky}
+
+Game: KRiiotQt | Turn 15 (buy) -> 16
+  {turn: 15, probability: Quite likely} -> {turn: 16, probability: Walk in the park}
+  {turn: 15, probability: Hmmm....} -> {turn: 16, probability: Quite likely}
+  {turn: 15, probability: Hmmm....} -> {turn: 16, probability: Quite likely}
+
+Game: kYxk9EIR | Turn 21 (buy) -> 22
+  {turn: 21, probability: Rather detrimental} -> {turn: 22, probability: Risky}
+  {turn: 21, probability: Hmmm....} -> {turn: 22, probability: Quite likely}
+
+Game: kYxk9EIR | Turn 39 (buy) -> 40
+  {turn: 39, probability: Hmmm....} -> {turn: 40, probability: Quite likely}
+  {turn: 39, probability: Playing with fire} -> {turn: 40, probability: Rather detrimental}
+
+Game: kYxk9EIR | Turn 42 (buy) -> 43
+  {turn: 42, probability: Rather detrimental} -> {turn: 43, probability: Risky}
+
+Game: kYxk9EIR | Turn 45 (buy) -> 46
+  {turn: 45, probability: Gamble} -> {turn: 46, probability: Hmmm....}
+
+Game: kYxk9EIR | Turn 55 (buy) -> 56
+  {turn: 55, probability: Risky} -> {turn: 56, probability: Gamble}
+  {turn: 55, probability: Risky} -> {turn: 56, probability: Gamble}
+
+Game: kYxk9EIR | Turn 77 (buy) -> 78
+  {turn: 77, probability: Playing with fire} -> {turn: 78, probability: Rather detrimental}
+
+Game: lcTnk42a | Turn 7 (buy) -> 8
+  {turn: 7, probability: Risky} -> {turn: 8, probability: Gamble}
+
+Game: lcTnk42a | Turn 16 (buy) -> 17
+  {turn: 16, probability: Hmmm....} -> {turn: 17, probability: Quite likely}
+
+Game: lcTnk42a | Turn 25 (buy) -> 26
+  {turn: 25, probability: Piece of cake} -> {turn: 26, probability: Sure thing}
+  {turn: 25, probability: Risky} -> {turn: 26, probability: Gamble}
+  {turn: 25, probability: Quite likely} -> {turn: 26, probability: Walk in the park}
+  {turn: 25, probability: Rather detrimental} -> {turn: 26, probability: Risky}
+
+Game: lcTnk42a | Turn 29 (buy) -> 30
+  {turn: 29, probability: Walk in the park} -> {turn: 30, probability: Piece of cake}
+
+Game: lcTnk42a | Turn 31 (buy) -> 32
+  {turn: 31, probability: Hmmm....} -> {turn: 32, probability: Quite likely}
+
+Game: lE2alHao | Turn 12 (buy) -> 13
+  {turn: 12, probability: Gamble} -> {turn: 13, probability: Hmmm....}
+  {turn: 12, probability: Quite likely} -> {turn: 13, probability: Walk in the park}
+  {turn: 12, probability: Risky} -> {turn: 13, probability: Gamble}
+  {turn: 12, probability: Quite likely} -> {turn: 13, probability: Walk in the park}
+  {turn: 12, probability: Walk in the park} -> {turn: 13, probability: Piece of cake}
+  {turn: 12, probability: Risky} -> {turn: 13, probability: Gamble}
+
+Game: lE2alHao | Turn 20 (buy) -> 21
+  {turn: 20, probability: Rather detrimental} -> {turn: 21, probability: Risky}
+  {turn: 20, probability: Rather detrimental} -> {turn: 21, probability: Risky}
+  {turn: 20, probability: Hmmm....} -> {turn: 21, probability: Quite likely}
+  {turn: 20, probability: Playing with fire} -> {turn: 21, probability: Rather detrimental}
+
+Game: lE2alHao | Turn 23 (buy) -> 24
+  {turn: 23, probability: Rather detrimental} -> {turn: 24, probability: Risky}
+
+Game: lE2alHao | Turn 42 (buy) -> 43
+  {turn: 42, probability: Quite likely} -> {turn: 43, probability: Walk in the park}
+
+Game: lE2alHao | Turn 49 (buy) -> 50
+  {turn: 49, probability: Playing with fire} -> {turn: 50, probability: Rather detrimental}
+  {turn: 49, probability: Hmmm....} -> {turn: 50, probability: Quite likely}
+
+Game: lE2alHao | Turn 52 (buy) -> 53
+  {turn: 52, probability: Gamble} -> {turn: 53, probability: Hmmm....}
+
+Game: LlPedBCp | Turn 12 (buy) -> 13
+  {turn: 12, probability: Risky} -> {turn: 13, probability: Gamble}
+
+Game: ls55mMvu | Turn 11 (buy) -> 12
+  {turn: 11, probability: Quite likely} -> {turn: 12, probability: Walk in the park}
+  {turn: 11, probability: Hmmm....} -> {turn: 12, probability: Quite likely}
+  {turn: 11, probability: Piece of cake} -> {turn: 12, probability: Sure thing}
+  {turn: 11, probability: Quite likely} -> {turn: 12, probability: Walk in the park}
+
+Game: ls55mMvu | Turn 24 (buy) -> 25
+  {turn: 24, probability: Quite likely} -> {turn: 25, probability: Walk in the park}
+  {turn: 24, probability: Suicide mission} -> {turn: 25, probability: Playing with fire}
+  {turn: 24, probability: Hmmm....} -> {turn: 25, probability: Quite likely}
+
+Game: ls55mMvu | Turn 26 (buy) -> 27
+  {turn: 26, probability: Quite likely} -> {turn: 27, probability: Walk in the park}
+  {turn: 26, probability: Walk in the park} -> {turn: 27, probability: Piece of cake}
+  {turn: 26, probability: Quite likely} -> {turn: 27, probability: Walk in the park}
+
+Game: ls55mMvu | Turn 33 (buy) -> 34
+  {turn: 33, probability: Gamble} -> {turn: 34, probability: Hmmm....}
+
+Game: ls55mMvu | Turn 39 (buy) -> 40
+  {turn: 39, probability: Walk in the park} -> {turn: 40, probability: Piece of cake}
+  {turn: 39, probability: Risky} -> {turn: 40, probability: Gamble}
+
+Game: ls55mMvu | Turn 42 (buy) -> 43
+  {turn: 42, probability: Walk in the park} -> {turn: 43, probability: Piece of cake}
+
+Game: ls55mMvu | Turn 47 (buy) -> 48
+  {turn: 47, probability: Risky} -> {turn: 48, probability: Gamble}
+
+Game: LzYNAdjy | Turn 13 (buy) -> 14
+  {turn: 13, probability: Rather detrimental} -> {turn: 14, probability: Risky}
+  {turn: 13, probability: Risky} -> {turn: 14, probability: Gamble}
+
+Game: m6GyveFA | Turn 13 (buy) -> 14
+  {turn: 13, probability: Suicide mission} -> {turn: 14, probability: Playing with fire}
+  {turn: 13, probability: Gamble} -> {turn: 14, probability: Hmmm....}
+
+Game: Mbnj5OOI | Turn 7 (buy) -> 8
+  {turn: 7, probability: Gamble} -> {turn: 8, probability: Hmmm....}
+
+Game: Mbnj5OOI | Turn 12 (buy) -> 13
+  {turn: 12, probability: Walk in the park} -> {turn: 13, probability: Piece of cake}
+  {turn: 12, probability: Playing with fire} -> {turn: 13, probability: Rather detrimental}
+  {turn: 12, probability: Hmmm....} -> {turn: 13, probability: Quite likely}
+
+Game: Mbnj5OOI | Turn 22 (buy) -> 23
+  {turn: 22, probability: Walk in the park} -> {turn: 23, probability: Piece of cake}
+
+Game: Mbnj5OOI | Turn 29 (buy) -> 30
+  {turn: 29, probability: Playing with fire} -> {turn: 30, probability: Rather detrimental}
+
+Game: Mbnj5OOI | Turn 33 (buy) -> 34
+  {turn: 33, probability: Risky} -> {turn: 34, probability: Gamble}
+
+Game: Mbnj5OOI | Turn 40 (buy) -> 41
+  {turn: 40, probability: Risky} -> {turn: 41, probability: Gamble}
+  {turn: 40, probability: Quite likely} -> {turn: 41, probability: Walk in the park}
+  {turn: 40, probability: Quite likely} -> {turn: 41, probability: Walk in the park}
+
+Game: Mbnj5OOI | Turn 42 (buy) -> 43
+  {turn: 42, probability: Walk in the park} -> {turn: 43, probability: Piece of cake}
+
+Game: Mbnj5OOI | Turn 54 (buy) -> 55
+  {turn: 54, probability: Gamble} -> {turn: 55, probability: Hmmm....}
+
+Game: Mbnj5OOI | Turn 59 (buy) -> 60
+  {turn: 59, probability: Gamble} -> {turn: 60, probability: Hmmm....}
+
+Game: MbpETotA | Turn 13 (buy) -> 14
+  {turn: 13, probability: Gamble} -> {turn: 14, probability: Hmmm....}
+  {turn: 13, probability: Walk in the park} -> {turn: 14, probability: Piece of cake}
+
+Game: MbpETotA | Turn 23 (buy) -> 24
+  {turn: 23, probability: Risky} -> {turn: 24, probability: Gamble}
+  {turn: 23, probability: Quite likely} -> {turn: 24, probability: Walk in the park}
+
+Game: MbpETotA | Turn 25 (buy) -> 26
+  {turn: 25, probability: Gamble} -> {turn: 26, probability: Hmmm....}
+  {turn: 25, probability: Quite likely} -> {turn: 26, probability: Walk in the park}
+
+Game: MbpETotA | Turn 39 (buy) -> 40
+  {turn: 39, probability: Hmmm....} -> {turn: 40, probability: Quite likely}
+
+Game: MbpETotA | Turn 49 (buy) -> 50
+  {turn: 49, probability: Suicide mission} -> {turn: 50, probability: Playing with fire}
+  {turn: 49, probability: Playing with fire} -> {turn: 50, probability: Rather detrimental}
+  {turn: 49, probability: Quite likely} -> {turn: 50, probability: Walk in the park}
+
+Game: mKWwkEsA | Turn 15 (buy) -> 16
+  {turn: 15, probability: Quite likely} -> {turn: 16, probability: Walk in the park}
+  {turn: 15, probability: Walk in the park} -> {turn: 16, probability: Piece of cake}
+  {turn: 15, probability: Quite likely} -> {turn: 16, probability: Walk in the park}
+  {turn: 15, probability: Risky} -> {turn: 16, probability: Gamble}
+
+Game: MxezqXEg | Turn 14 (buy) -> 15
+  {turn: 14, probability: Quite likely} -> {turn: 15, probability: Walk in the park}
+
+Game: n3vXpv2q | Turn 7 (buy) -> 8
+  {turn: 7, probability: Hmmm....} -> {turn: 8, probability: Quite likely}
+
+Game: n3vXpv2q | Turn 13 (buy) -> 14
+  {turn: 13, probability: Quite likely} -> {turn: 14, probability: Walk in the park}
+  {turn: 13, probability: Playing with fire} -> {turn: 14, probability: Rather detrimental}
+  {turn: 13, probability: Rather detrimental} -> {turn: 14, probability: Risky}
+
+Game: n3vXpv2q | Turn 19 (buy) -> 20
+  {turn: 19, probability: Piece of cake} -> {turn: 20, probability: Sure thing}
+  {turn: 19, probability: Quite likely} -> {turn: 20, probability: Walk in the park}
+
+Game: n3vXpv2q | Turn 33 (buy) -> 34
+  {turn: 33, probability: Hmmm....} -> {turn: 34, probability: Quite likely}
+
+Game: nsnsgEUB | Turn 9 (buy) -> 10
+  {turn: 9, probability: Quite likely} -> {turn: 10, probability: Walk in the park}
+  {turn: 9, probability: Hmmm....} -> {turn: 10, probability: Quite likely}
+
+Game: nsnsgEUB | Turn 15 (buy) -> 16
+  {turn: 15, probability: Quite likely} -> {turn: 16, probability: Walk in the park}
+
+Game: nU31eocu | Turn 10 (buy) -> 11
+  {turn: 10, probability: Quite likely} -> {turn: 11, probability: Walk in the park}
+  {turn: 10, probability: Walk in the park} -> {turn: 11, probability: Piece of cake}
+
+Game: nU31eocu | Turn 18 (buy) -> 19
+  {turn: 18, probability: Piece of cake} -> {turn: 19, probability: Sure thing}
+  {turn: 18, probability: Gamble} -> {turn: 19, probability: Hmmm....}
+  {turn: 18, probability: Rather detrimental} -> {turn: 19, probability: Risky}
+  {turn: 18, probability: Walk in the park} -> {turn: 19, probability: Piece of cake}
+
+Game: nU31eocu | Turn 23 (buy) -> 24
+  {turn: 23, probability: Walk in the park} -> {turn: 24, probability: Piece of cake}
+  {turn: 23, probability: Gamble} -> {turn: 24, probability: Hmmm....}
+
+Game: nU31eocu | Turn 26 (buy) -> 27
+  {turn: 26, probability: Hmmm....} -> {turn: 27, probability: Quite likely}
+  {turn: 26, probability: Hmmm....} -> {turn: 27, probability: Quite likely}
+  {turn: 26, probability: Hmmm....} -> {turn: 27, probability: Quite likely}
+  {turn: 26, probability: Gamble} -> {turn: 27, probability: Hmmm....}
+
+Game: nU31eocu | Turn 39 (buy) -> 40
+  {turn: 39, probability: Walk in the park} -> {turn: 40, probability: Piece of cake}
+
+Game: nU31eocu | Turn 44 (buy) -> 45
+  {turn: 44, probability: Walk in the park} -> {turn: 45, probability: Piece of cake}
+  {turn: 44, probability: Walk in the park} -> {turn: 45, probability: Piece of cake}
+
+Game: nU31eocu | Turn 46 (buy) -> 47
+  {turn: 46, probability: Walk in the park} -> {turn: 47, probability: Piece of cake}
+  {turn: 46, probability: Walk in the park} -> {turn: 47, probability: Piece of cake}
+  {turn: 46, probability: Playing with fire} -> {turn: 47, probability: Rather detrimental}
+
+Game: o7gTUpzG | Turn 18 (buy) -> 19
+  {turn: 18, probability: Playing with fire} -> {turn: 19, probability: Rather detrimental}
+  {turn: 18, probability: Gamble} -> {turn: 19, probability: Hmmm....}
+
+Game: o7gTUpzG | Turn 38 (buy) -> 39
+  {turn: 38, probability: Gamble} -> {turn: 39, probability: Hmmm....}
+  {turn: 38, probability: Quite likely} -> {turn: 39, probability: Walk in the park}
+  {turn: 38, probability: Hmmm....} -> {turn: 39, probability: Quite likely}
+  {turn: 38, probability: Hmmm....} -> {turn: 39, probability: Quite likely}
+
+Game: o7gTUpzG | Turn 48 (buy) -> 49
+  {turn: 48, probability: Playing with fire} -> {turn: 49, probability: Rather detrimental}
+  {turn: 48, probability: Quite likely} -> {turn: 49, probability: Walk in the park}
+  {turn: 48, probability: Suicide mission} -> {turn: 49, probability: Playing with fire}
+  {turn: 48, probability: Suicide mission} -> {turn: 49, probability: Playing with fire}
+
+Game: o9DH1tbI | Turn 8 (buy) -> 9
+  {turn: 8, probability: Rather detrimental} -> {turn: 9, probability: Risky}
+  {turn: 8, probability: Risky} -> {turn: 9, probability: Gamble}
+
+Game: o9DH1tbI | Turn 18 (buy) -> 19
+  {turn: 18, probability: Gamble} -> {turn: 19, probability: Hmmm....}
+  {turn: 18, probability: Quite likely} -> {turn: 19, probability: Walk in the park}
+
+Game: o9DH1tbI | Turn 21 (buy) -> 22
+  {turn: 21, probability: Suicide mission} -> {turn: 22, probability: Playing with fire}
+  {turn: 21, probability: Suicide mission} -> {turn: 22, probability: Playing with fire}
+
+Game: o9DH1tbI | Turn 39 (buy) -> 40
+  {turn: 39, probability: Playing with fire} -> {turn: 40, probability: Rather detrimental}
+  {turn: 39, probability: Walk in the park} -> {turn: 40, probability: Piece of cake}
+  {turn: 39, probability: Quite likely} -> {turn: 40, probability: Walk in the park}
+  {turn: 39, probability: Risky} -> {turn: 40, probability: Gamble}
+
+Game: o9DH1tbI | Turn 41 (buy) -> 42
+  {turn: 41, probability: Risky} -> {turn: 42, probability: Gamble}
+  {turn: 41, probability: Gamble} -> {turn: 42, probability: Hmmm....}
+  {turn: 41, probability: Rather detrimental} -> {turn: 42, probability: Risky}
+  {turn: 41, probability: Quite likely} -> {turn: 42, probability: Walk in the park}
+
+Game: o9DH1tbI | Turn 47 (buy) -> 48
+  {turn: 47, probability: Rather detrimental} -> {turn: 48, probability: Risky}
+
+Game: o9DH1tbI | Turn 49 (buy) -> 50
+  {turn: 49, probability: Walk in the park} -> {turn: 50, probability: Piece of cake}
+
+Game: o9DH1tbI | Turn 56 (buy) -> 57
+  {turn: 56, probability: Playing with fire} -> {turn: 57, probability: Rather detrimental}
+
+Game: OsihFSd3 | Turn 19 (buy) -> 20
+  {turn: 19, probability: Gamble} -> {turn: 20, probability: Hmmm....}
+  {turn: 19, probability: Impossible} -> {turn: 20, probability: Suicide mission}
+
+Game: oTxBySHv | Turn 8 (buy) -> 9
+  {turn: 8, probability: Walk in the park} -> {turn: 9, probability: Piece of cake}
+  {turn: 8, probability: Hmmm....} -> {turn: 9, probability: Quite likely}
+
+Game: oTxBySHv | Turn 14 (buy) -> 15
+  {turn: 14, probability: Quite likely} -> {turn: 15, probability: Walk in the park}
+
+Game: oTxBySHv | Turn 31 (buy) -> 32
+  {turn: 31, probability: Gamble} -> {turn: 32, probability: Hmmm....}
+  {turn: 31, probability: Suicide mission} -> {turn: 32, probability: Playing with fire}
+  {turn: 31, probability: Playing with fire} -> {turn: 32, probability: Rather detrimental}
+  {turn: 31, probability: Risky} -> {turn: 32, probability: Gamble}
+
+Game: oTxBySHv | Turn 43 (buy) -> 44
+  {turn: 43, probability: Quite likely} -> {turn: 44, probability: Walk in the park}
+  {turn: 43, probability: Rather detrimental} -> {turn: 44, probability: Risky}
+
+Game: oTxBySHv | Turn 50 (buy) -> 51
+  {turn: 50, probability: Suicide mission} -> {turn: 51, probability: Playing with fire}
+
+Game: PG0AyXz6 | Turn 9 (buy) -> 10
+  {turn: 9, probability: Playing with fire} -> {turn: 10, probability: Rather detrimental}
+  {turn: 9, probability: Hmmm....} -> {turn: 10, probability: Quite likely}
+  {turn: 9, probability: Gamble} -> {turn: 10, probability: Hmmm....}
+
+Game: PG0AyXz6 | Turn 15 (buy) -> 16
+  {turn: 15, probability: Risky} -> {turn: 16, probability: Gamble}
+  {turn: 15, probability: Hmmm....} -> {turn: 16, probability: Quite likely}
+
+Game: qcZ6XacO | Turn 22 (buy) -> 23
+  {turn: 22, probability: Hmmm....} -> {turn: 23, probability: Quite likely}
+
+Game: qcZ6XacO | Turn 38 (buy) -> 39
+  {turn: 38, probability: Quite likely} -> {turn: 39, probability: Walk in the park}
+  {turn: 38, probability: Rather detrimental} -> {turn: 39, probability: Risky}
+
+Game: qcZ6XacO | Turn 42 (buy) -> 43
+  {turn: 42, probability: Hmmm....} -> {turn: 43, probability: Quite likely}
+
+Game: qcZ6XacO | Turn 47 (buy) -> 48
+  {turn: 47, probability: Rather detrimental} -> {turn: 48, probability: Risky}
+  {turn: 47, probability: Walk in the park} -> {turn: 48, probability: Piece of cake}
+  {turn: 47, probability: Hmmm....} -> {turn: 48, probability: Quite likely}
+
+Game: qSggdc1l | Turn 7 (buy) -> 8
+  {turn: 7, probability: Walk in the park} -> {turn: 8, probability: Piece of cake}
+
+Game: qSggdc1l | Turn 18 (buy) -> 19
+  {turn: 18, probability: Walk in the park} -> {turn: 19, probability: Piece of cake}
+  {turn: 18, probability: Piece of cake} -> {turn: 19, probability: Sure thing}
+  {turn: 18, probability: Rather detrimental} -> {turn: 19, probability: Risky}
+
+Game: qSggdc1l | Turn 23 (buy) -> 24
+  {turn: 23, probability: Hmmm....} -> {turn: 24, probability: Quite likely}
+  {turn: 23, probability: Hmmm....} -> {turn: 24, probability: Quite likely}
+  {turn: 23, probability: Gamble} -> {turn: 24, probability: Hmmm....}
+
+Game: qSggdc1l | Turn 37 (buy) -> 38
+  {turn: 37, probability: Quite likely} -> {turn: 38, probability: Walk in the park}
+  {turn: 37, probability: Quite likely} -> {turn: 38, probability: Walk in the park}
+
+Game: qSggdc1l | Turn 40 (buy) -> 41
+  {turn: 40, probability: Gamble} -> {turn: 41, probability: Hmmm....}
+  {turn: 40, probability: Gamble} -> {turn: 41, probability: Hmmm....}
+  {turn: 40, probability: Hmmm....} -> {turn: 41, probability: Quite likely}
+
+Game: qSggdc1l | Turn 50 (buy) -> 51
+  {turn: 50, probability: Risky} -> {turn: 51, probability: Gamble}
+
+Game: rcADebO7 | Turn 11 (buy) -> 12
+  {turn: 11, probability: Quite likely} -> {turn: 12, probability: Walk in the park}
+  {turn: 11, probability: Quite likely} -> {turn: 12, probability: Walk in the park}
+  {turn: 11, probability: Quite likely} -> {turn: 12, probability: Walk in the park}
+  {turn: 11, probability: Risky} -> {turn: 12, probability: Gamble}
+
+Game: rsuV1X4m | Turn 41 (buy) -> 42
+  {turn: 41, probability: Risky} -> {turn: 42, probability: Gamble}
+  {turn: 41, probability: Suicide mission} -> {turn: 42, probability: Playing with fire}
+  {turn: 41, probability: Quite likely} -> {turn: 42, probability: Walk in the park}
+
+Game: rsuV1X4m | Turn 58 (buy) -> 59
+  {turn: 58, probability: Rather detrimental} -> {turn: 59, probability: Risky}
+  {turn: 58, probability: Rather detrimental} -> {turn: 59, probability: Risky}
+  {turn: 58, probability: Risky} -> {turn: 59, probability: Gamble}
+
+Game: RZ8BAeSw | Turn 8 (buy) -> 9
+  {turn: 8, probability: Walk in the park} -> {turn: 9, probability: Piece of cake}
+  {turn: 8, probability: Risky} -> {turn: 9, probability: Gamble}
+  {turn: 8, probability: Piece of cake} -> {turn: 9, probability: Sure thing}
+
+Game: RZ8BAeSw | Turn 33 (buy) -> 34
+  {turn: 33, probability: Quite likely} -> {turn: 34, probability: Walk in the park}
+
+Game: RZ8BAeSw | Turn 35 (buy) -> 36
+  {turn: 35, probability: Gamble} -> {turn: 36, probability: Hmmm....}
+  {turn: 35, probability: Piece of cake} -> {turn: 36, probability: Sure thing}
+
+Game: RZ8BAeSw | Turn 41 (buy) -> 42
+  {turn: 41, probability: Quite likely} -> {turn: 42, probability: Walk in the park}
+  {turn: 41, probability: Quite likely} -> {turn: 42, probability: Walk in the park}
+  {turn: 41, probability: Risky} -> {turn: 42, probability: Gamble}
+
+Game: RZ8BAeSw | Turn 44 (buy) -> 45
+  {turn: 44, probability: Quite likely} -> {turn: 45, probability: Walk in the park}
+
+Game: RZ8BAeSw | Turn 46 (buy) -> 47
+  {turn: 46, probability: Rather detrimental} -> {turn: 47, probability: Risky}
+
+Game: s3JdpvD9 | Turn 12 (buy) -> 13
+  {turn: 12, probability: Risky} -> {turn: 13, probability: Gamble}
+  {turn: 12, probability: Quite likely} -> {turn: 13, probability: Walk in the park}
+
+Game: s3JdpvD9 | Turn 22 (buy) -> 23
+  {turn: 22, probability: Gamble} -> {turn: 23, probability: Hmmm....}
+  {turn: 22, probability: Hmmm....} -> {turn: 23, probability: Quite likely}
+
+Game: s3JdpvD9 | Turn 36 (buy) -> 37
+  {turn: 36, probability: Gamble} -> {turn: 37, probability: Hmmm....}
+  {turn: 36, probability: Risky} -> {turn: 37, probability: Gamble}
+  {turn: 36, probability: Quite likely} -> {turn: 37, probability: Walk in the park}
+
+Game: s3JdpvD9 | Turn 39 (buy) -> 40
+  {turn: 39, probability: Risky} -> {turn: 40, probability: Gamble}
+
+Game: s3JdpvD9 | Turn 44 (buy) -> 45
+  {turn: 44, probability: Walk in the park} -> {turn: 45, probability: Piece of cake}
+  {turn: 44, probability: Walk in the park} -> {turn: 45, probability: Piece of cake}
+
+Game: s3JdpvD9 | Turn 50 (buy) -> 51
+  {turn: 50, probability: Hmmm....} -> {turn: 51, probability: Quite likely}
+  {turn: 50, probability: Playing with fire} -> {turn: 51, probability: Rather detrimental}
+
+Game: s3JdpvD9 | Turn 59 (buy) -> 60
+  {turn: 59, probability: Gamble} -> {turn: 60, probability: Hmmm....}
+
+Game: s4t1EpTR | Turn 10 (buy) -> 11
+  {turn: 10, probability: Walk in the park} -> {turn: 11, probability: Piece of cake}
+  {turn: 10, probability: Gamble} -> {turn: 11, probability: Hmmm....}
+  {turn: 10, probability: Walk in the park} -> {turn: 11, probability: Piece of cake}
+
+Game: Sbvci8mx | Turn 19 (buy) -> 20
+  {turn: 19, probability: Piece of cake} -> {turn: 20, probability: Sure thing}
+
+Game: sQYxKBAh | Turn 13 (buy) -> 14
+  {turn: 13, probability: Walk in the park} -> {turn: 14, probability: Piece of cake}
+
+Game: sQYxKBAh | Turn 39 (buy) -> 40
+  {turn: 39, probability: Hmmm....} -> {turn: 40, probability: Quite likely}
+  {turn: 39, probability: Quite likely} -> {turn: 40, probability: Walk in the park}
+  {turn: 39, probability: Playing with fire} -> {turn: 40, probability: Rather detrimental}
+
+Game: sQYxKBAh | Turn 51 (buy) -> 52
+  {turn: 51, probability: Hmmm....} -> {turn: 52, probability: Quite likely}
+
+Game: sX5fG1KB | Turn 17 (buy) -> 18
+  {turn: 17, probability: Hmmm....} -> {turn: 18, probability: Quite likely}
+  {turn: 17, probability: Quite likely} -> {turn: 18, probability: Walk in the park}
+  {turn: 17, probability: Walk in the park} -> {turn: 18, probability: Piece of cake}
+
+Game: sX5fG1KB | Turn 27 (buy) -> 28
+  {turn: 27, probability: Hmmm....} -> {turn: 28, probability: Quite likely}
+  {turn: 27, probability: Playing with fire} -> {turn: 28, probability: Rather detrimental}
+  {turn: 27, probability: Quite likely} -> {turn: 28, probability: Walk in the park}
+
+Game: sX5fG1KB | Turn 30 (buy) -> 31
+  {turn: 30, probability: Gamble} -> {turn: 31, probability: Hmmm....}
+
+Game: sX5fG1KB | Turn 34 (buy) -> 35
+  {turn: 34, probability: Hmmm....} -> {turn: 35, probability: Quite likely}
+  {turn: 34, probability: Suicide mission} -> {turn: 35, probability: Playing with fire}
+
+Game: sX5fG1KB | Turn 39 (buy) -> 40
+  {turn: 39, probability: Walk in the park} -> {turn: 40, probability: Piece of cake}
+
+Game: sX5fG1KB | Turn 42 (buy) -> 43
+  {turn: 42, probability: Hmmm....} -> {turn: 43, probability: Quite likely}
+
+Game: sX5fG1KB | Turn 49 (buy) -> 50
+  {turn: 49, probability: Quite likely} -> {turn: 50, probability: Walk in the park}
+
+Game: t3oAosGw | Turn 10 (buy) -> 11
+  {turn: 10, probability: Walk in the park} -> {turn: 11, probability: Piece of cake}
+  {turn: 10, probability: Playing with fire} -> {turn: 11, probability: Rather detrimental}
+  {turn: 10, probability: Risky} -> {turn: 11, probability: Gamble}
+
+Game: t3oAosGw | Turn 17 (buy) -> 18
+  {turn: 17, probability: Walk in the park} -> {turn: 18, probability: Piece of cake}
+
+Game: t3oAosGw | Turn 36 (buy) -> 37
+  {turn: 36, probability: Hmmm....} -> {turn: 37, probability: Quite likely}
+
+Game: t3oAosGw | Turn 39 (buy) -> 40
+  {turn: 39, probability: Risky} -> {turn: 40, probability: Gamble}
+  {turn: 39, probability: Rather detrimental} -> {turn: 40, probability: Risky}
+  {turn: 39, probability: Walk in the park} -> {turn: 40, probability: Piece of cake}
+
+Game: t3oAosGw | Turn 42 (buy) -> 43
+  {turn: 42, probability: Rather detrimental} -> {turn: 43, probability: Risky}
+  {turn: 42, probability: Risky} -> {turn: 43, probability: Gamble}
+
+Game: u3UXjB4n | Turn 27 (buy) -> 28
+  {turn: 27, probability: Quite likely} -> {turn: 28, probability: Walk in the park}
+  {turn: 27, probability: Playing with fire} -> {turn: 28, probability: Rather detrimental}
+
+Game: u3UXjB4n | Turn 32 (buy) -> 33
+  {turn: 32, probability: Impossible} -> {turn: 33, probability: Suicide mission}
+  {turn: 32, probability: Playing with fire} -> {turn: 33, probability: Rather detrimental}
+
+Game: u3UXjB4n | Turn 42 (buy) -> 43
+  {turn: 42, probability: Gamble} -> {turn: 43, probability: Hmmm....}
+  {turn: 42, probability: Quite likely} -> {turn: 43, probability: Walk in the park}
+
+Game: u3UXjB4n | Turn 52 (buy) -> 53
+  {turn: 52, probability: Rather detrimental} -> {turn: 53, probability: Risky}
+  {turn: 52, probability: Gamble} -> {turn: 53, probability: Hmmm....}
+  {turn: 52, probability: Suicide mission} -> {turn: 53, probability: Playing with fire}
+
+Game: uiK2c2Xb | Turn 11 (buy) -> 12
+  {turn: 11, probability: Rather detrimental} -> {turn: 12, probability: Risky}
+  {turn: 11, probability: Gamble} -> {turn: 12, probability: Hmmm....}
+  {turn: 11, probability: Quite likely} -> {turn: 12, probability: Walk in the park}
+
+Game: uiK2c2Xb | Turn 20 (buy) -> 21
+  {turn: 20, probability: Quite likely} -> {turn: 21, probability: Walk in the park}
+  {turn: 20, probability: Rather detrimental} -> {turn: 21, probability: Risky}
+  {turn: 20, probability: Hmmm....} -> {turn: 21, probability: Quite likely}
+
+Game: uiK2c2Xb | Turn 30 (buy) -> 31
+  {turn: 30, probability: Gamble} -> {turn: 31, probability: Hmmm....}
+
+Game: uiK2c2Xb | Turn 34 (buy) -> 35
+  {turn: 34, probability: Hmmm....} -> {turn: 35, probability: Quite likely}
+  {turn: 34, probability: Playing with fire} -> {turn: 35, probability: Rather detrimental}
+
+Game: uiK2c2Xb | Turn 42 (buy) -> 43
+  {turn: 42, probability: Hmmm....} -> {turn: 43, probability: Quite likely}
+
+Game: umM5wOxp | Turn 17 (buy) -> 18
+  {turn: 17, probability: Hmmm....} -> {turn: 18, probability: Quite likely}
+  {turn: 17, probability: Rather detrimental} -> {turn: 18, probability: Risky}
+  {turn: 17, probability: Risky} -> {turn: 18, probability: Gamble}
+
+Game: vgSsROij | Turn 13 (buy) -> 14
+  {turn: 13, probability: Suicide mission} -> {turn: 14, probability: Playing with fire}
+
+Game: vgSsROij | Turn 19 (buy) -> 20
+  {turn: 19, probability: Risky} -> {turn: 20, probability: Gamble}
+  {turn: 19, probability: Gamble} -> {turn: 20, probability: Hmmm....}
+  {turn: 19, probability: Risky} -> {turn: 20, probability: Gamble}
+  {turn: 19, probability: Hmmm....} -> {turn: 20, probability: Quite likely}
+  {turn: 19, probability: Walk in the park} -> {turn: 20, probability: Piece of cake}
+
+Game: vgSsROij | Turn 27 (buy) -> 28
+  {turn: 27, probability: Suicide mission} -> {turn: 28, probability: Playing with fire}
+
+Game: vgSsROij | Turn 32 (buy) -> 33
+  {turn: 32, probability: Hmmm....} -> {turn: 33, probability: Quite likely}
+
+Game: vgSsROij | Turn 39 (buy) -> 40
+  {turn: 39, probability: Quite likely} -> {turn: 40, probability: Walk in the park}
+
+Game: vgSsROij | Turn 46 (buy) -> 47
+  {turn: 46, probability: Risky} -> {turn: 47, probability: Gamble}
+  {turn: 46, probability: Hmmm....} -> {turn: 47, probability: Quite likely}
+
+Game: vgSsROij | Turn 56 (buy) -> 57
+  {turn: 56, probability: Suicide mission} -> {turn: 57, probability: Playing with fire}
+
+Game: vgSsROij | Turn 59 (buy) -> 60
+  {turn: 59, probability: Playing with fire} -> {turn: 60, probability: Rather detrimental}
+
+Game: VIky04Nk | Turn 16 (buy) -> 17
+  {turn: 16, probability: Quite likely} -> {turn: 17, probability: Walk in the park}
+  {turn: 16, probability: Risky} -> {turn: 17, probability: Gamble}
+
+Game: VIky04Nk | Turn 24 (buy) -> 25
+  {turn: 24, probability: Gamble} -> {turn: 25, probability: Hmmm....}
+  {turn: 24, probability: Gamble} -> {turn: 25, probability: Hmmm....}
+
+Game: VIky04Nk | Turn 27 (buy) -> 28
+  {turn: 27, probability: Walk in the park} -> {turn: 28, probability: Piece of cake}
+  {turn: 27, probability: Hmmm....} -> {turn: 28, probability: Quite likely}
+  {turn: 27, probability: Quite likely} -> {turn: 28, probability: Walk in the park}
+  {turn: 27, probability: Walk in the park} -> {turn: 28, probability: Piece of cake}
+
+Game: VIky04Nk | Turn 36 (buy) -> 37
+  {turn: 36, probability: Rather detrimental} -> {turn: 37, probability: Risky}
+  {turn: 36, probability: Hmmm....} -> {turn: 37, probability: Quite likely}
+  {turn: 36, probability: Hmmm....} -> {turn: 37, probability: Quite likely}
+
+Game: VIky04Nk | Turn 38 (buy) -> 39
+  {turn: 38, probability: Walk in the park} -> {turn: 39, probability: Piece of cake}
+  {turn: 38, probability: Hmmm....} -> {turn: 39, probability: Quite likely}
+
+Game: VIky04Nk | Turn 46 (buy) -> 47
+  {turn: 46, probability: Quite likely} -> {turn: 47, probability: Walk in the park}
+
+Game: VIky04Nk | Turn 60 (buy) -> 61
+  {turn: 60, probability: Risky} -> {turn: 61, probability: Gamble}
+
+Game: VIky04Nk | Turn 78 (buy) -> 79
+  {turn: 78, probability: Suicide mission} -> {turn: 79, probability: Playing with fire}
+
+Game: VkOJYQGn | Turn 28 (buy) -> 29
+  {turn: 28, probability: Playing with fire} -> {turn: 29, probability: Rather detrimental}
+  {turn: 28, probability: Playing with fire} -> {turn: 29, probability: Rather detrimental}
+
+Game: VkOJYQGn | Turn 35 (buy) -> 36
+  {turn: 35, probability: Hmmm....} -> {turn: 36, probability: Quite likely}
+  {turn: 35, probability: Risky} -> {turn: 36, probability: Gamble}
+
+Game: VkOJYQGn | Turn 41 (buy) -> 42
+  {turn: 41, probability: Playing with fire} -> {turn: 42, probability: Rather detrimental}
+  {turn: 41, probability: Piece of cake} -> {turn: 42, probability: Sure thing}
+
+Game: VkOJYQGn | Turn 55 (buy) -> 56
+  {turn: 55, probability: Risky} -> {turn: 56, probability: Gamble}
+
+Game: vpdVElDG | Turn 9 (buy) -> 10
+  {turn: 9, probability: Gamble} -> {turn: 10, probability: Hmmm....}
+
+Game: vpdVElDG | Turn 14 (buy) -> 15
+  {turn: 14, probability: Walk in the park} -> {turn: 15, probability: Piece of cake}
+
+Game: vpdVElDG | Turn 30 (buy) -> 31
+  {turn: 30, probability: Hmmm....} -> {turn: 31, probability: Quite likely}
+  {turn: 30, probability: Hmmm....} -> {turn: 31, probability: Quite likely}
+  {turn: 30, probability: Playing with fire} -> {turn: 31, probability: Rather detrimental}
+
+Game: vpdVElDG | Turn 34 (buy) -> 35
+  {turn: 34, probability: Quite likely} -> {turn: 35, probability: Walk in the park}
+
+Game: vpdVElDG | Turn 36 (buy) -> 37
+  {turn: 36, probability: Quite likely} -> {turn: 37, probability: Walk in the park}
+  {turn: 36, probability: Hmmm....} -> {turn: 37, probability: Quite likely}
+
+Game: vpdVElDG | Turn 41 (buy) -> 42
+  {turn: 41, probability: Walk in the park} -> {turn: 42, probability: Piece of cake}
+
+Game: WADabd2g | Turn 9 (buy) -> 10
+  {turn: 9, probability: Gamble} -> {turn: 10, probability: Hmmm....}
+  {turn: 9, probability: Playing with fire} -> {turn: 10, probability: Rather detrimental}
+
+Game: WADabd2g | Turn 40 (buy) -> 41
+  {turn: 40, probability: Walk in the park} -> {turn: 41, probability: Piece of cake}
+  {turn: 40, probability: Walk in the park} -> {turn: 41, probability: Piece of cake}
+
+Game: WADabd2g | Turn 43 (buy) -> 44
+  {turn: 43, probability: Gamble} -> {turn: 44, probability: Hmmm....}
+
+Game: WADabd2g | Turn 49 (buy) -> 50
+  {turn: 49, probability: Quite likely} -> {turn: 50, probability: Walk in the park}
+
+Game: Wh0KvQ1Z | Turn 23 (buy) -> 24
+  {turn: 23, probability: Rather detrimental} -> {turn: 24, probability: Risky}
+  {turn: 23, probability: Risky} -> {turn: 24, probability: Gamble}
+  {turn: 23, probability: Risky} -> {turn: 24, probability: Gamble}
+
+Game: Wh0KvQ1Z | Turn 35 (buy) -> 36
+  {turn: 35, probability: Quite likely} -> {turn: 36, probability: Walk in the park}
+
+Game: Wh0KvQ1Z | Turn 40 (buy) -> 41
+  {turn: 40, probability: Gamble} -> {turn: 41, probability: Hmmm....}
+  {turn: 40, probability: Quite likely} -> {turn: 41, probability: Walk in the park}
+  {turn: 40, probability: Risky} -> {turn: 41, probability: Gamble}
+
+Game: Wh0KvQ1Z | Turn 58 (buy) -> 59
+  {turn: 58, probability: Rather detrimental} -> {turn: 59, probability: Risky}
+  {turn: 58, probability: Playing with fire} -> {turn: 59, probability: Rather detrimental}
+
+Game: Wh0KvQ1Z | Turn 68 (buy) -> 69
+  {turn: 68, probability: Gamble} -> {turn: 69, probability: Hmmm....}
+
+Game: wVP6CtYL | Turn 12 (buy) -> 13
+  {turn: 12, probability: Gamble} -> {turn: 13, probability: Hmmm....}
+  {turn: 12, probability: Quite likely} -> {turn: 13, probability: Walk in the park}
+
+Game: wVP6CtYL | Turn 46 (buy) -> 47
+  {turn: 46, probability: Risky} -> {turn: 47, probability: Gamble}
+  {turn: 46, probability: Risky} -> {turn: 47, probability: Gamble}
+  {turn: 46, probability: Hmmm....} -> {turn: 47, probability: Quite likely}
+
+Game: WYZl5mxK | Turn 13 (buy) -> 14
+  {turn: 13, probability: Walk in the park} -> {turn: 14, probability: Piece of cake}
+  {turn: 13, probability: Quite likely} -> {turn: 14, probability: Walk in the park}
+  {turn: 13, probability: Walk in the park} -> {turn: 14, probability: Piece of cake}
+  {turn: 13, probability: Quite likely} -> {turn: 14, probability: Walk in the park}
+
+Game: WYZl5mxK | Turn 29 (buy) -> 30
+  {turn: 29, probability: Rather detrimental} -> {turn: 30, probability: Risky}
+  {turn: 29, probability: Risky} -> {turn: 30, probability: Gamble}
+
+Game: WYZl5mxK | Turn 39 (buy) -> 40
+  {turn: 39, probability: Walk in the park} -> {turn: 40, probability: Piece of cake}
+  {turn: 39, probability: Gamble} -> {turn: 40, probability: Hmmm....}
+
+Game: WYZl5mxK | Turn 61 (buy) -> 62
+  {turn: 61, probability: Rather detrimental} -> {turn: 62, probability: Risky}
+  {turn: 61, probability: Suicide mission} -> {turn: 62, probability: Playing with fire}
+
+Game: x9aiw0VG | Turn 13 (buy) -> 14
+  {turn: 13, probability: Rather detrimental} -> {turn: 14, probability: Risky}
+
+Game: Xd5EtATa | Turn 42 (buy) -> 43
+  {turn: 42, probability: Risky} -> {turn: 43, probability: Gamble}
+  {turn: 42, probability: Gamble} -> {turn: 43, probability: Hmmm....}
+  {turn: 42, probability: Quite likely} -> {turn: 43, probability: Walk in the park}
+
+Game: XGaXWoha | Turn 12 (buy) -> 13
+  {turn: 12, probability: Hmmm....} -> {turn: 13, probability: Quite likely}
+  {turn: 12, probability: Hmmm....} -> {turn: 13, probability: Quite likely}
+  {turn: 12, probability: Walk in the park} -> {turn: 13, probability: Piece of cake}
+  {turn: 12, probability: Hmmm....} -> {turn: 13, probability: Quite likely}
+  {turn: 12, probability: Hmmm....} -> {turn: 13, probability: Quite likely}
+
+Game: XGaXWoha | Turn 18 (buy) -> 19
+  {turn: 18, probability: Gamble} -> {turn: 19, probability: Hmmm....}
+  {turn: 18, probability: Hmmm....} -> {turn: 19, probability: Quite likely}
+  {turn: 18, probability: Rather detrimental} -> {turn: 19, probability: Risky}
+
+Game: XGaXWoha | Turn 57 (buy) -> 58
+  {turn: 57, probability: Hmmm....} -> {turn: 58, probability: Quite likely}
+  {turn: 57, probability: Hmmm....} -> {turn: 58, probability: Quite likely}
+  {turn: 57, probability: Gamble} -> {turn: 58, probability: Hmmm....}
+
+Game: XtsS3FQL | Turn 6 (buy) -> 7
+  {turn: 6, probability: Hmmm....} -> {turn: 7, probability: Quite likely}
+
+Game: XtsS3FQL | Turn 18 (buy) -> 19
+  {turn: 18, probability: Quite likely} -> {turn: 19, probability: Walk in the park}
+  {turn: 18, probability: Quite likely} -> {turn: 19, probability: Walk in the park}
+
+Game: xv6rbK85 | Turn 18 (buy) -> 19
+  {turn: 18, probability: Walk in the park} -> {turn: 19, probability: Piece of cake}
+  {turn: 18, probability: Risky} -> {turn: 19, probability: Gamble}
+  {turn: 18, probability: Gamble} -> {turn: 19, probability: Hmmm....}
+
+Game: xv6rbK85 | Turn 22 (buy) -> 23
+  {turn: 22, probability: Quite likely} -> {turn: 23, probability: Walk in the park}
+  {turn: 22, probability: Rather detrimental} -> {turn: 23, probability: Risky}
+  {turn: 22, probability: Gamble} -> {turn: 23, probability: Hmmm....}
+
+Game: xv6rbK85 | Turn 43 (buy) -> 44
+  {turn: 43, probability: Gamble} -> {turn: 44, probability: Hmmm....}
+  {turn: 43, probability: Hmmm....} -> {turn: 44, probability: Quite likely}
+  {turn: 43, probability: Gamble} -> {turn: 44, probability: Hmmm....}
+
+Game: xv6rbK85 | Turn 48 (buy) -> 49
+  {turn: 48, probability: Quite likely} -> {turn: 49, probability: Walk in the park}
+  {turn: 48, probability: Risky} -> {turn: 49, probability: Gamble}
+  {turn: 48, probability: Hmmm....} -> {turn: 49, probability: Quite likely}
+
+Game: YcsMprG0 | Turn 18 (buy) -> 19
+  {turn: 18, probability: Risky} -> {turn: 19, probability: Gamble}
+  {turn: 18, probability: Gamble} -> {turn: 19, probability: Hmmm....}
+  {turn: 18, probability: Walk in the park} -> {turn: 19, probability: Piece of cake}
+  {turn: 18, probability: Rather detrimental} -> {turn: 19, probability: Risky}
+
+Game: YcsMprG0 | Turn 47 (buy) -> 48
+  {turn: 47, probability: Rather detrimental} -> {turn: 48, probability: Risky}
+
+Game: YcsMprG0 | Turn 62 (buy) -> 63
+  {turn: 62, probability: Playing with fire} -> {turn: 63, probability: Rather detrimental}
+  {turn: 62, probability: Gamble} -> {turn: 63, probability: Hmmm....}
+  {turn: 62, probability: Hmmm....} -> {turn: 63, probability: Quite likely}
+
+Game: yJfavHkH | Turn 12 (buy) -> 13
+  {turn: 12, probability: Risky} -> {turn: 13, probability: Gamble}
+  {turn: 12, probability: Rather detrimental} -> {turn: 13, probability: Risky}
+
+Game: yJfavHkH | Turn 21 (buy) -> 22
+  {turn: 21, probability: Gamble} -> {turn: 22, probability: Hmmm....}
+
+Game: yJfavHkH | Turn 40 (buy) -> 41
+  {turn: 40, probability: Hmmm....} -> {turn: 41, probability: Quite likely}
+  {turn: 40, probability: Hmmm....} -> {turn: 41, probability: Quite likely}
+
+Game: yJfavHkH | Turn 48 (buy) -> 49
+  {turn: 48, probability: Suicide mission} -> {turn: 49, probability: Playing with fire}
+
+Game: yJfavHkH | Turn 53 (buy) -> 54
+  {turn: 53, probability: Hmmm....} -> {turn: 54, probability: Quite likely}
+  {turn: 53, probability: Playing with fire} -> {turn: 54, probability: Rather detrimental}
+

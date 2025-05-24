@@ -7,10 +7,7 @@ import com.kj.dom.model.AdMessage
 import com.kj.dom.model.AdProbability
 import com.kj.dom.model.GameState
 import com.kj.dom.model.ShopItemEnum
-import com.kj.dom.model.ShopItemEnum.CS
-import com.kj.dom.model.ShopItemEnum.GAS
 import com.kj.dom.model.ShopItemEnum.HPOT
-import com.kj.dom.model.ShopItemEnum.WAX
 import com.kj.dom.model.entity.GameTurn
 import com.kj.dom.model.response.ShopBuyResponse
 import com.kj.dom.repository.GameTurnRepository
@@ -60,7 +57,9 @@ class DataMinerService {
 //        dataMineItemProbabilities(gameState, PIECE_OF_CAKE)
 //        playUntilGoldAmount(gameState, 600)
 //        playAndLogMoves()
-        playAndLogMovesAsync()
+//        playAndLogMovesAsync()
+
+        runRealGame()
     }
 
     private fun mineAdData(
@@ -543,9 +542,9 @@ class DataMinerService {
 
             val acceptableAds = ads.filter { ad ->
                 val adProbability = AdProbability.fromDisplayName(ad.probability) ?: return@filter false
-                adProbability.percentage > adjustedThreshold && ad.expiresIn > 1
+                adProbability.successPct > adjustedThreshold && ad.expiresIn > 1
             }.sortedByDescending { ad ->
-                AdProbability.fromDisplayName(ad.probability)?.percentage ?: 0
+                AdProbability.fromDisplayName(ad.probability)?.successPct ?: 0
             }
 
             val bestSingleAd = acceptableAds.firstOrNull { ad ->
@@ -577,7 +576,8 @@ class DataMinerService {
             val acceptableAds = ads.filter { ad -> ad.reward.toInt() > AdProbability.fromDisplayName(ad.probability)!!.acceptableValue }
 
             if (acceptableAds.isEmpty()) {
-                val easiestAd = ads.minByOrNull { AdProbability.fromDisplayName(it.probability)?.percentage ?: Int.MAX_VALUE }
+                val easiestAd =
+                    ads.minByOrNull { AdProbability.fromDisplayName(it.probability)?.successPct ?: Int.MAX_VALUE }
                 if (easiestAd != null) {
                     return SuggestedMove("solve", adIds = listOf(easiestAd.adId))
                 } else {
@@ -694,7 +694,7 @@ class DataMinerService {
             val necessaryGold = HPOT.price - gameState.gold
 
             val bestSingleAd = ads.maxWithOrNull(compareBy<AdMessage> { ad ->
-                val probability = AdProbability.fromDisplayName(ad.probability)?.percentage ?: 0
+                val probability = AdProbability.fromDisplayName(ad.probability)?.successPct ?: 0
                 probability
             }.thenByDescending { ad ->
                 ad.reward.toIntOrNull() ?: 0
@@ -735,7 +735,7 @@ class DataMinerService {
 
             if (acceptableAds.isEmpty()) {
                 val easiestAd =
-                    ads.minByOrNull { AdProbability.fromDisplayName(it.probability)?.percentage ?: Int.MAX_VALUE }
+                    ads.minByOrNull { AdProbability.fromDisplayName(it.probability)?.successPct ?: Int.MAX_VALUE }
                 if (easiestAd != null) {
                     return SuggestedMove("solve", adIds = listOf(easiestAd.adId))
                 } else {
@@ -769,9 +769,9 @@ class DataMinerService {
         val hardAds = ads.filter { AdProbability.HARD.contains(AdProbability.fromDisplayName(it.probability)) }
 
         return mapOf(
-            "EASY" to easyAds,
-            "MEDIUM" to mediumAds,
-            "HARD" to hardAds
+            ProbabilityLevel.EASY.name to easyAds,
+            ProbabilityLevel.MEDIUM.name to mediumAds,
+            ProbabilityLevel.HARD.name to hardAds
         )
     }
 
@@ -888,17 +888,194 @@ class DataMinerService {
         jobs.joinAll()
     }
 
+    private fun runRealGame() {
+        gameSerivce.startGame()
+        var currentGameState = gameSerivce.getGameState()
+
+        log.info("Starting game: ${currentGameState.gameId}")
+
+        var isGameRunning = true
+        var suggestedMove: SuggestedMove? = null
+
+        while (isGameRunning) {
+            val adsList = gameSerivce.getAdMessages(currentGameState.gameId)
+
+            suggestedMove = calculateRealSuggestedMove(adsList, currentGameState, suggestedMove?.move == "wait")
+
+            if (suggestedMove == null) {
+                log.info("something impossible happened, finishing game")
+                isGameRunning = false
+                continue
+            }
+
+            when (suggestedMove.move) {
+                "solve" -> {
+                    val adId = suggestedMove.adIds.first()
+                    val solveAdResponse = gameSerivce.solveAd(currentGameState.gameId, adId)
+                    currentGameState = currentGameState.copy(
+                        lives = solveAdResponse.lives,
+                        gold = solveAdResponse.gold,
+                        score = solveAdResponse.score,
+                        turn = solveAdResponse.turn,
+                    )
+                }
+
+                "wait" -> {
+                    val shopBuyResponse = gameSerivce.buyShopItem(currentGameState.gameId, HPOT.id)
+                    currentGameState = currentGameState.copy(
+                        lives = shopBuyResponse.lives,
+                        gold = shopBuyResponse.gold,
+                        turn = shopBuyResponse.turn,
+                    )
+                }
+
+                "buy" -> {
+                    val shopBuyResponse = gameSerivce.buyShopItem(currentGameState.gameId, suggestedMove.itemId!!)
+                    currentGameState = currentGameState.copy(
+                        lives = shopBuyResponse.lives,
+                        gold = shopBuyResponse.gold,
+                        turn = shopBuyResponse.turn,
+                    )
+                }
+
+                "solveMultiple" -> {
+                    val adIds = suggestedMove.adIds
+                    adIds.forEach {
+                        val solveAdResponse = gameSerivce.solveAd(currentGameState.gameId, it)
+                        currentGameState = currentGameState.copy(
+                            lives = solveAdResponse.lives,
+                            gold = solveAdResponse.gold,
+                            score = solveAdResponse.score,
+                            turn = solveAdResponse.turn,
+                        )
+                    }
+                }
+            }
+
+            if (currentGameState.lives == 0) {
+                log.info("Game over! Finished game with score ${currentGameState.score}")
+                isGameRunning = false
+            }
+        }
+    }
+
     private fun calculateRealSuggestedMove(
         ads: List<AdMessage>,
         gameState: GameState,
+        skippedTurn: Boolean = false,
     ): SuggestedMove? {
         val groupedAdProbabilities = createAdProbabilityMap(ads)
+        val worthMap: Map<AdMessage, Double> = ads.associateWith {
+            calculateAdRewardWorth(
+                it
+            )
+        }
 
         if (gameState.lives == 1 && gameState.gold >= HPOT.price) {
             return SuggestedMove("buy", itemId = HPOT.id)
+        } else if (gameState.lives == 1 && gameState.gold < HPOT.price) {
+            if (groupedAdProbabilities[ProbabilityLevel.EASY.name]?.isEmpty() == true) {
+                if (ads.any { it.expiresIn == 1 } && !skippedTurn) {
+                    // TODO add an already skipped possibility too to continue and not get stuck in a loop
+                    return SuggestedMove("wait")
+                }
+            } else {
+                val acceptableAds = worthMap
+                    .filter { it.value >= AdProbability.fromDisplayName(it.key.probability)?.acceptableValue!! }
+                    .entries.sortedByDescending { it.value }
+
+                if (acceptableAds.isEmpty()) {
+                    val bestPossibleAd = worthMap.maxBy { it.value }
+                    return SuggestedMove("solve", adIds = listOf(bestPossibleAd.key.adId))
+                }
+
+                val necessaryGold = HPOT.price - gameState.gold
+                val bestAd = acceptableAds.first()
+
+                if (bestAd.key.reward.toInt() > necessaryGold) {
+                    return SuggestedMove("solve", adIds = listOf(bestAd.key.adId))
+                }
+
+                if (acceptableAds.size == 1) {
+                    val bestAd = acceptableAds.first()
+                    return SuggestedMove("solve", adIds = listOf(bestAd.key.adId))
+                } else {
+                    val bestAd = acceptableAds.firstOrNull { it.key.expiresIn != 1 }
+                        ?: worthMap.maxBy { it.value }
+                    return SuggestedMove("solve", adIds = listOf(bestAd.key.adId))
+                }
+            }
+        } else {
+            val acceptableAds =
+                worthMap.filter { it.value >= AdProbability.fromDisplayName(it.key.probability)?.acceptableValue!! }
+                    .entries.sortedByDescending { it.value }
+            val easyAds = groupedAdProbabilities[ProbabilityLevel.EASY.name]
+
+            if (acceptableAds.isEmpty()) {
+                val acceptableEasyAds = easyAds?.filter {
+                    AdProbability.fromDisplayName(it.probability)?.acceptableValue!! > worthMap.getValue(it) - 8
+                }?.filter { it.reward.toInt() > HPOT.price - gameState.gold }
+
+                val easyAd = acceptableEasyAds?.firstOrNull()
+
+                if (easyAd != null) {
+                    return SuggestedMove("solve", adIds = listOf(easyAd.adId))
+                }
+
+                if (gameState.turn < 40 && gameState.gold > 100) {
+                    return SuggestedMove("buy", ShopItemEnum.CS.id)
+                }
+            }
+
+            if (easyAds?.isEmpty()!!) {
+                val mediumAds = groupedAdProbabilities[ProbabilityLevel.MEDIUM.name]
+
+                if (mediumAds?.isNotEmpty()!!) {
+                    val acceptableMediumAd = mediumAds.firstOrNull {
+                        val worth = worthMap[it] ?: return@firstOrNull false
+                        val threshold =
+                            AdProbability.fromDisplayName(it.probability)?.acceptableValue ?: return@firstOrNull false
+                        worth >= threshold
+                    }
+
+                    if (acceptableMediumAd != null && acceptableMediumAd.probability == AdProbability.QUITE_LIKELY.displayName) {
+                        return SuggestedMove("solve", adIds = listOf(acceptableMediumAd.adId))
+                    } else {
+                        if (gameState.gold > 300) {
+                            return SuggestedMove("buy", ShopItemEnum.MTRIX.id)
+                        } else if (gameState.gold > 100 && gameState.gold < 300) {
+                            return SuggestedMove("buy", ShopItemEnum.CS.id)
+                        } else if (gameState.gold > 50 && gameState.gold < 100) {
+                            return SuggestedMove("buy", ShopItemEnum.HPOT.id)
+                        } else {
+                            val bestAd = acceptableAds.first()
+                            return SuggestedMove("solve", adIds = listOf(bestAd.key.adId))
+                        }
+                    }
+                } else {
+                    if (gameState.gold > 300) {
+                        return SuggestedMove("buy", ShopItemEnum.MTRIX.id)
+                    } else if (gameState.gold > 100 && gameState.gold < 300) {
+                        return SuggestedMove("buy", ShopItemEnum.CS.id)
+                    } else if (gameState.gold > 50 && gameState.gold < 100) {
+                        return SuggestedMove("buy", ShopItemEnum.HPOT.id)
+                    } else {
+                        val bestAd = acceptableAds.first()
+                        return SuggestedMove("solve", adIds = listOf(bestAd.key.adId))
+                    }
+                }
+            } else {
+                val bestAd = acceptableAds.first()
+                return SuggestedMove("solve", adIds = listOf(bestAd.key.adId))
+            }
         }
 
         return null
+    }
+
+    fun calculateAdRewardWorth(ad: AdMessage): Double {
+        val prob = AdProbability.entries.find { it.displayName == ad.probability } ?: return 0.0
+        return (prob.successPct / 100.0) * ad.reward.toInt()
     }
 }
 
@@ -932,3 +1109,9 @@ data class SuggestedMove(
     val adIds: List<String> = emptyList(),
     val gameOverProbability: Int? = null,
 )
+
+enum class ProbabilityLevel {
+    EASY,
+    MEDIUM,
+    HARD,
+}

@@ -18,12 +18,12 @@ data class AdLog(
 )
 
 fun main() {
-    // consolidateProbabilities()
+//    consolidateProbabilities()
     calculateRewardWorth()
 }
 
 fun consolidateProbabilities() {
-    val item = "gas"
+    val item = "wingpotmax"
     val file = File("logs/${item}_item_turns.csv")
     val lines = file.readLines().drop(1)
 
