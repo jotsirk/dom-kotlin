@@ -24,11 +24,11 @@ class GameRunnerService {
     private val taskMap = ConcurrentHashMap<String, Future<Champion>>()
 
     fun executeGameTask(): String {
-        val champion = Champion(gameState = gameService.startGame())
         val taskId = UUID.randomUUID().toString()
 
         val future = executor.submit(Callable {
             try {
+                val champion = Champion(gameState = gameService.startGame())
                 gameService.solveGame(champion)
             } catch (e: Exception) {
                 log.error("Error solving game", e)
