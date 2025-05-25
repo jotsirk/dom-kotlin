@@ -9,21 +9,20 @@ import org.springframework.stereotype.Component
 
 @Component
 class GameInitializerService(
-    @Value("\${dom.start.manually:false}")
-    private val startManually: Boolean
+  @Value("\${dom.start.manually:false}")
+  private val startManually: Boolean,
 ) : ApplicationRunner {
+  @Autowired
+  private lateinit var gameRunnerService: GameRunnerService
 
-    @Autowired
-    private lateinit var gameRunnerService: GameRunnerService
+  @Autowired
+  private lateinit var log: Logger
 
-    @Autowired
-    private lateinit var log: Logger
-
-    override fun run(args: ApplicationArguments?) {
-        if (!startManually) {
-            gameRunnerService.executeGameTask()
-        } else {
-            log.info("Game not. Start game manually on : -endpoint-")
-        }
+  override fun run(args: ApplicationArguments?) {
+    if (!startManually) {
+      gameRunnerService.executeGameTask()
+    } else {
+      log.info("Game not scheduled. Start game manually on : POST -> http://localhost:8080/dom/game/start-new")
     }
+  }
 }

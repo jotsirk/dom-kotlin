@@ -9,48 +9,60 @@ import java.util.concurrent.Executors
 import java.util.concurrent.Future
 import org.slf4j.Logger
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.http.HttpStatus.GONE
 import org.springframework.stereotype.Service
+import org.springframework.web.client.HttpClientErrorException
 
 @Service
 class GameRunnerService {
+  @Autowired
+  private lateinit var log: Logger
 
-    @Autowired
-    private lateinit var log: Logger
+  @Autowired
+  private lateinit var gameService: GameService
 
-    @Autowired
-    private lateinit var gameService: GameService
+  private val executor: ExecutorService = Executors.newFixedThreadPool(4)
+  private val taskMap = ConcurrentHashMap<String, Future<Champion?>>()
 
-    private val executor: ExecutorService = Executors.newFixedThreadPool(4)
-    private val taskMap = ConcurrentHashMap<String, Future<Champion>>()
+  fun executeGameTask(): String {
+    val taskId = UUID.randomUUID().toString()
 
-    fun executeGameTask(): String {
-        val taskId = UUID.randomUUID().toString()
-
-        val future = executor.submit(Callable {
-            try {
-                val champion = Champion(gameState = gameService.startGame())
-                gameService.solveGame(champion)
-            } catch (e: Exception) {
-                log.error("Error solving game", e)
-                throw e
+    val future =
+      executor.submit(
+        Callable {
+          return@Callable try {
+            val gameState = gameService.startGame()
+            val champion = Champion(gameState)
+            gameService.solveGame(champion)
+            champion
+          } catch (e: HttpClientErrorException) {
+            when (e.statusCode) {
+              GONE -> log.error("Illegal move made - Game is over")
+              else -> log.error("HTTP client error", e)
             }
-        })
+            null
+          } catch (e: Exception) {
+            log.error("Error solving game", e)
+            null
+          }
+        },
+      )
 
-        taskMap[taskId] = future
-        return taskId
-    }
+    taskMap[taskId] = future
+    return taskId
+  }
 
-    fun getTaskState(taskId: String): Champion? {
-        val future = taskMap[taskId] ?: return null
-        return if (future.isDone) future.get() else null
-    }
+  fun getTaskState(taskId: String): Champion? {
+    val future = taskMap[taskId] ?: return null
+    return if (future.isDone) future.get() else null
+  }
 
-    fun isRunning(taskId: String): Boolean {
-        val future = taskMap[taskId] ?: return false
-        return !future.isDone
-    }
+  fun isRunning(taskId: String): Boolean {
+    val future = taskMap[taskId] ?: return false
+    return !future.isDone
+  }
 
-    fun stopAll() {
-        executor.shutdownNow()
-    }
+  fun stopAll() {
+    executor.shutdownNow()
+  }
 }

@@ -10,13 +10,12 @@ import org.springframework.web.bind.annotation.RestController
 @RestController
 @RequestMapping("/dom/game")
 class GameResource {
+  @Autowired
+  private lateinit var gameRunnerService: GameRunnerService
 
-    @Autowired
-    private lateinit var gameRunnerService: GameRunnerService
-
-    @PostMapping("start-new")
-    fun startNewGame(): ResponseEntity<Void> {
-        gameRunnerService.executeGameTask()
-        return ResponseEntity.ok().build()
-    }
+  @PostMapping("start-new")
+  fun startNewGame(): ResponseEntity<Void> {
+    gameRunnerService.executeGameTask()
+    return ResponseEntity.ok().build()
+  }
 }
