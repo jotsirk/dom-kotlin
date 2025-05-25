@@ -1,5 +1,6 @@
 package com.kj.dom.service
 
+import com.kj.dom.client.DomApiClient
 import com.kj.dom.model.AdMessage
 import com.kj.dom.model.AdProbability
 import com.kj.dom.model.Champion
@@ -10,34 +11,32 @@ import com.kj.dom.model.MoveType.SOLVE_MULTIPLE
 import com.kj.dom.model.MoveType.WAIT
 import com.kj.dom.model.ShopItemEnum.HPOT
 import com.kj.dom.model.SolveAd
-import com.kj.dom.model.response.AdMessageResponse
-import com.kj.dom.model.response.GameStartResponse
+import com.kj.dom.model.SuggestedMove
 import com.kj.dom.model.response.ShopBuyResponse
-import com.kj.dom.model.response.SolveAdResponse
 import com.kj.dom.service.helper.GameUtil
 import com.kj.dom.service.helper.GameUtil.decodeBase64
 import java.util.Base64
 import org.slf4j.Logger
-import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
-import org.springframework.web.client.RestClient
-import org.springframework.web.client.body
 
 @Service
 class GameService {
   @Autowired
-  private lateinit var domRestClient: RestClient
+  private lateinit var log: Logger
+
+  @Autowired
+  private lateinit var domApiClient: DomApiClient
 
   fun startGame(): GameState {
     val gameStateResponse =
-      sendStartGameRequest()
+      domApiClient.startGame()
         ?: throw IllegalStateException("Could not start game")
     return gameStateResponse.toModel()
   }
 
   fun getAdMessages(gameId: String): List<AdMessage> {
-    val response = fetchAdMessages(gameId)
+    val response = domApiClient.findAdMessages(gameId)
 
     return response?.mapNotNull { adResponse ->
       if (adResponse.encrypted == 2) {
@@ -67,13 +66,13 @@ class GameService {
     itemId: String,
   ): ShopBuyResponse {
     val response =
-      buyShopItemRequest(gameId, itemId)
+      domApiClient.buyShopItem(gameId, itemId)
         ?: throw IllegalStateException("Could not buy shop item")
     return response
   }
 
   fun solveAd(gameId: String, adId: String): SolveAd {
-    val response = solveAdRequest(gameId, adId) ?: throw IllegalStateException("Could not solve ad")
+    val response = domApiClient.solveAd(gameId, adId) ?: throw IllegalStateException("Could not solve ad")
     return response.toModel()
   }
 
@@ -88,62 +87,7 @@ class GameService {
 
       log.debug("Move found - will try and execute: {}", suggestedMove)
 
-      when (suggestedMove.move) {
-        SOLVE -> {
-          val adId = suggestedMove.adIds.first()
-          val solveAdResponse = solveAd(champion.gameState.gameId, adId)
-          val newGameState = champion.gameState.copy(
-            lives = solveAdResponse.lives,
-            gold = solveAdResponse.gold,
-            score = solveAdResponse.score,
-            turn = solveAdResponse.turn,
-          )
-
-          champion.gameState = newGameState
-          champion.moves.add(suggestedMove)
-        }
-
-        WAIT -> {
-          val shopBuyResponse = buyShopItem(champion.gameState.gameId, HPOT.id)
-          val newGameState = champion.gameState.copy(
-            lives = shopBuyResponse.lives,
-            gold = shopBuyResponse.gold,
-            turn = shopBuyResponse.turn,
-          )
-
-          champion.gameState = newGameState
-          champion.moves.add(suggestedMove)
-        }
-
-        BUY -> {
-          val shopBuyResponse = buyShopItem(champion.gameState.gameId, suggestedMove.itemId!!)
-          val newGameState = champion.gameState.copy(
-            lives = shopBuyResponse.lives,
-            gold = shopBuyResponse.gold,
-            turn = shopBuyResponse.turn,
-          )
-
-          champion.gameState = newGameState
-          champion.moves.add(suggestedMove)
-          champion.items.add(suggestedMove.itemId)
-        }
-
-        SOLVE_MULTIPLE -> {
-          val adIds = suggestedMove.adIds
-          adIds.forEach {
-            val solveAdResponse = solveAd(champion.gameState.gameId, it)
-            val newGameState = champion.gameState.copy(
-              lives = solveAdResponse.lives,
-              gold = solveAdResponse.gold,
-              score = solveAdResponse.score,
-              turn = solveAdResponse.turn,
-            )
-
-            champion.gameState = newGameState
-          }
-          champion.moves.add(suggestedMove)
-        }
-      }
+      doSuggestedMove(suggestedMove, champion)
 
       if (champion.gameState.lives == 0) {
         log.info("Game over! Finished game with score ${champion.gameState.score}, on turn ${champion.gameState.turn}")
@@ -154,32 +98,56 @@ class GameService {
     return champion
   }
 
-  private fun fetchAdMessages(gameId: String): List<AdMessageResponse>? {
-    return domRestClient.get()
-      .uri("/{gameId}/messages", gameId)
-      .retrieve()
-      .body<List<AdMessageResponse>>()
+  private fun doSuggestedMove(
+    suggestedMove: SuggestedMove,
+    champion: Champion,
+  ) {
+    when (suggestedMove.move) {
+      SOLVE -> {
+        val adId = suggestedMove.adIds.first()
+        val response = solveAd(champion.gameState.gameId, adId)
+        champion.gameState = updateGameStateFromSolve(champion, response)
+      }
+
+      WAIT -> {
+        val response = buyShopItem(champion.gameState.gameId, HPOT.id)
+        champion.gameState = updateGameStateFromShop(champion, response)
+      }
+
+      BUY -> {
+        val itemId = suggestedMove.itemId ?: error("BUY move must have itemId")
+        val response = buyShopItem(champion.gameState.gameId, itemId)
+        champion.gameState = updateGameStateFromShop(champion, response)
+        champion.items.add(itemId)
+      }
+
+      SOLVE_MULTIPLE -> {
+        suggestedMove.adIds.forEach { adId ->
+          val response = solveAd(champion.gameState.gameId, adId)
+          champion.gameState = updateGameStateFromSolve(champion, response)
+        }
+      }
+    }
+
+    champion.moves.add(suggestedMove)
   }
 
-  private fun sendStartGameRequest(): GameStartResponse? {
-    return domRestClient.post()
-      .uri("/game/start")
-      .retrieve()
-      .body(GameStartResponse::class.java)
+  private fun updateGameStateFromSolve(champion: Champion, response: SolveAd): GameState {
+    return champion.gameState.copy(
+      lives = response.lives,
+      gold = response.gold,
+      score = response.score,
+      turn = response.turn
+    )
   }
 
-  private fun buyShopItemRequest(gameId: String, itemId: String): ShopBuyResponse? {
-    return domRestClient.post()
-      .uri("/{gameId}/shop/buy/{itemId}", gameId, itemId)
-      .retrieve()
-      .body(ShopBuyResponse::class.java)
+  private fun updateGameStateFromShop(champion: Champion, response: ShopBuyResponse): GameState {
+    return champion.gameState.copy(
+      lives = response.lives,
+      gold = response.gold,
+      turn = response.turn
+    )
   }
-
-  private fun solveAdRequest(gameId: String, adId: String): SolveAdResponse? =
-    domRestClient.post()
-      .uri("/{gameId}/solve/{adId}", gameId, adId)
-      .retrieve()
-      .body(SolveAdResponse::class.java)
 
   private fun isBase64(value: String): Boolean {
     return try {
@@ -193,9 +161,5 @@ class GameService {
 
   private fun decodeAdMessage(value: String, encrypted: Int?): String {
     return if (encrypted == 1 && isBase64(value)) decodeBase64(value) else value
-  }
-
-  companion object {
-    private val log: Logger = LoggerFactory.getLogger(GameService::class.java)
   }
 }

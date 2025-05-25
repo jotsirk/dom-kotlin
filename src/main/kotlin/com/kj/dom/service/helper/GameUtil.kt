@@ -78,7 +78,7 @@ object GameUtil {
       }.maxByOrNull { it.reward }
       ?.let { return SuggestedMove(SOLVE, adIds = listOf(it.adId)) }
 
-    if (ads.count { it.expiresIn == 1 } >= 3) return SuggestedMove(WAIT)
+    if (ads.count { it.expiresIn == 1 } >= 2) return SuggestedMove(WAIT)
 
     val validAds =
       easyAds
@@ -108,23 +108,15 @@ object GameUtil {
     val easyAds = grouped[EASY.name].orEmpty()
 
     if (acceptableAds.isEmpty()) {
-      if (gameState.gold > 100 &&
-        gameState.turn < 40
-      ) {
+      if (ads.count { it.expiresIn == 1 } >= 2) return SuggestedMove(WAIT)
+
+      if (gameState.gold > 100 && gameState.turn < 50) {
         return SuggestedMove(BUY, ShopItemEnum.lowTierItems.random().id)
       }
-      if (gameState.gold > 300 &&
-        gameState.turn > 40
-      ) {
+
+      if (gameState.gold > 300 && gameState.turn > 50) {
         return SuggestedMove(BUY, ShopItemEnum.highTierItems.random().id)
       }
-
-      easyAds
-        .filter {
-          val threshold = AdProbability.fromDisplayName(it.probability)?.acceptableValue ?: 0
-          it.reward > threshold - 3 && it.reward > HPOT.price - gameState.gold
-        }.maxByOrNull { it.reward }
-        ?.let { return SuggestedMove(SOLVE, adIds = listOf(it.adId)) }
 
       if (easyAds.size <= 3) {
         return when {

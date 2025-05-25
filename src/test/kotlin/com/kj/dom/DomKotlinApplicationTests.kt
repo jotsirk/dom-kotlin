@@ -1,6 +1,5 @@
-package com.kj.domkotlin
+package com.kj.dom
 
-import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest
 
 @SpringBootTest
