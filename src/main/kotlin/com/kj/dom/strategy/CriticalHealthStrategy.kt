@@ -24,8 +24,8 @@ class CriticalHealthStrategy : HealthStrategy {
 
     return findImmediateHealthPotionSolution(champion)
       ?: findSingleAdSolution(neededGold, easyAds)
-      ?: findValuableAdSolution(easyAds, worthMap)
       ?: decideWaitOrMultiAdSolution(ads, easyAds, worthMap, neededGold)
+      ?: findValuableAdSolution(easyAds, worthMap)
       ?: createFallbackSolution(worthMap)
   }
 
@@ -45,11 +45,12 @@ class CriticalHealthStrategy : HealthStrategy {
   private fun findValuableAdSolution(
     easyAds: List<AdMessage>,
     worthMap: Map<AdMessage, Double>,
-  ): SuggestedMove? = easyAds
-    .filter {
-      (worthMap[it] ?: 0.0) > (AdProbability.fromDisplayName(it.probability)?.acceptableValue?.toDouble() ?: 0.0)
-    }.maxByOrNull { worthMap[it] ?: 0.0 }
-    ?.let { SuggestedMove(SOLVE, adIds = listOf(it.adId)) }
+  ): SuggestedMove? =
+    easyAds
+      .filter { ad ->
+        worthMap.getAdWorth(ad) > getAcceptableValue(ad)
+      }.maxByOrNull { worthMap.getAdWorth(it) }
+      ?.let { SuggestedMove(SOLVE, adIds = listOf(it.adId)) }
 
   private fun decideWaitOrMultiAdSolution(
     ads: List<AdMessage>,
@@ -57,21 +58,16 @@ class CriticalHealthStrategy : HealthStrategy {
     worthMap: Map<AdMessage, Double>,
     neededGold: Int,
   ): SuggestedMove? {
-    val valuableAds =
-      easyAds
-        .filter {
-          val acceptableValue =
-            AdProbability
-              .fromDisplayName(it.probability)
-              ?.acceptableValue
-              ?.toDouble()
-              ?: 0.0
-          (worthMap[it] ?: 0.0) > acceptableValue && it.reward > 0
-        }.sortedByDescending { worthMap[it] ?: 0.0 }
-
     if (ads.count { it.expiresIn == 1 } >= 2) {
       return SuggestedMove(WAIT)
     }
+
+    val valuableAds =
+      easyAds
+        .filter {
+          val acceptableValue = getAcceptableValue(it)
+          worthMap.getAdWorth(it) > acceptableValue && it.reward > 0
+        }.sortedByDescending { worthMap.getAdWorth(it) }
 
     return valuableAds
       .takeIf { valid ->
@@ -85,4 +81,9 @@ class CriticalHealthStrategy : HealthStrategy {
       .maxBy { it.value }
       .key
       .let { SuggestedMove(SOLVE, adIds = listOf(it.adId)) }
+
+  private fun Map<AdMessage, Double>.getAdWorth(ad: AdMessage) = this[ad] ?: 0.0
+
+  private fun getAcceptableValue(ad: AdMessage) =
+    AdProbability.fromDisplayName(ad.probability)?.acceptableValue?.toDouble() ?: 0.0
 }

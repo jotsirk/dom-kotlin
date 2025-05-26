@@ -1,6 +1,8 @@
 package com.kj.dom
 
 import com.kj.dom.model.AdMessage
+import com.kj.dom.model.Champion
+import com.kj.dom.model.GameState
 
 object DomData {
   val walkInTheParkAd1 =
@@ -195,6 +197,16 @@ object DomData {
     ratherDetrimentalAd3,
     hmmmAd3,
     hmmmAd4,
-    quiteLikelyAd2
+    quiteLikelyAd2,
+  )
+
+  val referenceGameState =
+    GameState(gameId = "01JW7A7TM0N5TKRJQG8EJJX5YV", lives = 3, gold = 0, score = 0, turn = 0, highScore = 0)
+
+  val referenceChampion = Champion(
+    gameState = referenceGameState,
+    isGameRunning = false,
+    items = mutableListOf(),
+    moves = mutableListOf(),
   )
 }

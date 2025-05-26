@@ -13,9 +13,4 @@ enum class ShopItemEnum(val id: String, val price: Int) {
     IRON("iron", 300),
     MTRIX("mtrix", 300),
     WINGPOTMAX("wingpotmax", 300);
-
-    companion object {
-        val lowTierItems = entries.filter { it.price == 100 }
-        val highTierItems = entries.filter { it.price == 300 }
-    }
 }
