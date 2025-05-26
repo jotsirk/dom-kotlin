@@ -19,7 +19,7 @@ class DomApiClient {
       .post()
       .uri("/game/start")
       .retrieve()
-      .body(GameStartResponse::class.java)
+      .body()
 
   fun findAdMessages(gameId: String): List<AdMessageResponse>? =
     domRestClient
