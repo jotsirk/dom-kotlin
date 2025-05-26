@@ -5,15 +5,20 @@ import com.kj.dom.model.AdMessage
 import com.kj.dom.model.AdProbability
 import com.kj.dom.model.Champion
 import com.kj.dom.model.GameState
+import com.kj.dom.model.MoveLog
+import com.kj.dom.model.MoveType
 import com.kj.dom.model.MoveType.BUY
+import com.kj.dom.model.MoveType.BUY_AND_SOLVE
 import com.kj.dom.model.MoveType.SOLVE
 import com.kj.dom.model.MoveType.SOLVE_MULTIPLE
 import com.kj.dom.model.MoveType.WAIT
+import com.kj.dom.model.ShopItemEnum
 import com.kj.dom.model.ShopItemEnum.HPOT
 import com.kj.dom.model.SolveAd
 import com.kj.dom.model.SuggestedMove
 import com.kj.dom.model.response.ShopBuyResponse
 import com.kj.dom.service.helper.GameUtil
+import com.kj.dom.service.helper.GameUtil.calculateAdRewardWorth
 import com.kj.dom.service.helper.GameUtil.decodeBase64
 import java.util.Base64
 import org.slf4j.Logger
@@ -43,7 +48,7 @@ class GameService {
       }
 
       val decryptedAdId = decodeAdMessage(adResponse.adId, adResponse.encrypted)
-      val decryptedMessage = decodeAdMessage(adResponse.adId, adResponse.encrypted)
+      val decryptedMessage = decodeAdMessage(adResponse.message, adResponse.encrypted)
       val decryptedProbability = decodeAdMessage(adResponse.probability, adResponse.encrypted)
 
       val enumProbability = AdProbability.fromDisplayName(decryptedProbability)
@@ -75,17 +80,32 @@ class GameService {
   }
 
   fun solveGame(champion: Champion): Champion {
-    log.info("Starting game: ${champion.gameState.gameId}")
+    log.info("Starting to solve game: ${champion.gameState.gameId}")
 
     champion.isGameRunning = true
 
     while (champion.isGameRunning) {
       val adsList = getAdMessages(champion.gameState.gameId)
-      val suggestedMove = GameUtil.calculateSuggestedMove(adsList, champion.gameState)
+      val suggestedMove = GameUtil.calculateSuggestedMove(adsList, champion)
+      val livesBeforeMove = champion.gameState.lives
+      val moveLog = MoveLog(
+        turn = champion.gameState.turn,
+        move = suggestedMove,
+        adsWorthMap = adsList.associateWith { calculateAdRewardWorth(it) },
+        goldTuringMove = champion.gameState.gold,
+      )
 
       log.debug("Move found - will try and execute: {}", suggestedMove)
 
       doSuggestedMove(suggestedMove, champion)
+
+      if (livesBeforeMove > champion.gameState.lives) {
+        moveLog.result = "failed"
+      } else {
+        moveLog.result = "success"
+      }
+
+      champion.moveLogs.add(moveLog)
 
       if (champion.gameState.lives == 0) {
         log.info("Game over! Finished game with score ${champion.gameState.score}, on turn ${champion.gameState.turn}")
@@ -105,6 +125,7 @@ class GameService {
         val adId = suggestedMove.adIds.first()
         val response = solveAd(champion.gameState.gameId, adId)
         champion.gameState = updateGameStateFromSolve(champion, response)
+        champion.boughtQuestItemPreviousTurn = false
       }
 
       WAIT -> {
@@ -124,6 +145,14 @@ class GameService {
           val response = solveAd(champion.gameState.gameId, adId)
           champion.gameState = updateGameStateFromSolve(champion, response)
         }
+      }
+
+      BUY_AND_SOLVE -> {
+        val itemId = suggestedMove.itemId ?: error("BUY move must have itemId")
+        buyShopItem(champion.gameState.gameId, itemId)
+
+        val solveResponse = solveAd(champion.gameState.gameId, suggestedMove.adIds.first())
+        champion.gameState = updateGameStateFromSolve(champion, solveResponse)
       }
     }
 

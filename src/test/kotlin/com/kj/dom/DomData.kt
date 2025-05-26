@@ -92,4 +92,109 @@ object DomData {
       expiresIn = 7,
       probability = "Quite likely",
     )
+
+  // =======
+
+  val pieceOfCakeAd3 = AdMessage(
+    adId = "vQBMExdF",
+    message = "Help defending thrift shoppe in Thorncrest from the intruders",
+    reward = 77,
+    expiresIn = 2,
+    encrypted = null,
+    probability = "Piece of cake"
+  )
+
+  val riskyAd2 = AdMessage(
+    adId = "ZHbEveXw",
+    message = "Investigate Epiphanius Odson and find out their relation to the magic pan.",
+    reward = 126,
+    expiresIn = 1,
+    encrypted = 1,
+    probability = "Risky"
+  )
+
+  val playingWithFireAd1 = AdMessage(
+    adId = "nCyFzlzw",
+    message = "Infiltrate The Invisibles and recover their secrets.",
+    reward = 167,
+    expiresIn = 1,
+    encrypted = 1,
+    probability = "Playing with fire"
+  )
+
+  val suicideMissionAd1 = AdMessage(
+    adId = "w76w9zZt",
+    message = "Infiltrate The Crystal Dragontooth Association and recover their secrets.",
+    reward = 179,
+    expiresIn = 1,
+    encrypted = 1,
+    probability = "Suicide mission"
+  )
+
+  val ratherDetrimentalAd2 = AdMessage(
+    adId = "9EGzrpFQ",
+    message = "Infiltrate The Ebony Crosses and recover their secrets.",
+    reward = 158,
+    expiresIn = 1,
+    encrypted = 1,
+    probability = "Rather detrimental"
+  )
+
+  val hmmmAd2 = AdMessage(
+    adId = "vklJGeMT",
+    message = "Investigate Rolf Allaire and find out their relation to the magic dog.",
+    reward = 148,
+    expiresIn = 2,
+    encrypted = 1,
+    probability = "Hmmm...."
+  )
+
+  val ratherDetrimentalAd3 = AdMessage(
+    adId = "VV2tIqj5",
+    message = "Investigate Gabby Bragason and find out their relation to the magic wagon.",
+    reward = 172,
+    expiresIn = 2,
+    encrypted = 1,
+    probability = "Rather detrimental"
+  )
+
+  val hmmmAd3 = AdMessage(
+    adId = "vpaCEZdR",
+    message = "Help defending thrift shoppe in Scalehill from the intruders",
+    reward = 95,
+    expiresIn = 7,
+    encrypted = null,
+    probability = "Hmmm...."
+  )
+
+  val hmmmAd4 = AdMessage(
+    adId = "wsuUTbcP",
+    message = "Help defending village in Snowwell from the intruders",
+    reward = 98,
+    expiresIn = 7,
+    encrypted = null,
+    probability = "Hmmm...."
+  )
+
+  val quiteLikelyAd2 = AdMessage(
+    adId = "iCxzACpG",
+    message = "Help defending thrift shoppe in Newmoore from the intruders",
+    reward = 119,
+    expiresIn = 7,
+    encrypted = null,
+    probability = "Quite likely"
+  )
+
+  val adsList1 = listOf(
+    pieceOfCakeAd3,
+    riskyAd2,
+    playingWithFireAd1,
+    suicideMissionAd1,
+    ratherDetrimentalAd2,
+    hmmmAd2,
+    ratherDetrimentalAd3,
+    hmmmAd3,
+    hmmmAd4,
+    quiteLikelyAd2
+  )
 }

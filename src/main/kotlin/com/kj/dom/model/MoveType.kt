@@ -5,4 +5,5 @@ enum class MoveType {
   WAIT,
   BUY,
   SOLVE_MULTIPLE,
+  BUY_AND_SOLVE,
 }

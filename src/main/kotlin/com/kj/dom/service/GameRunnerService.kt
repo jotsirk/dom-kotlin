@@ -32,7 +32,11 @@ class GameRunnerService {
         Callable {
           return@Callable try {
             val gameState = gameService.startGame()
+
+            log.info("Started game with id: ${gameState.gameId} and taskId: $taskId")
+
             val champion = Champion(gameState)
+
             gameService.solveGame(champion)
             champion
           } catch (e: HttpClientErrorException) {
@@ -60,6 +64,25 @@ class GameRunnerService {
   fun isRunning(taskId: String): Boolean {
     val future = taskMap[taskId] ?: return false
     return !future.isDone
+  }
+
+  fun getAllTaskIds(): List<String> {
+    return taskMap.keys.toList()
+  }
+
+  fun getGameResult(taskId: String): Champion? {
+    val future = taskMap[taskId] ?: return null
+
+    return if (future.isDone && !future.isCancelled) {
+      try {
+        future.get()
+      } catch (e: Exception) {
+        log.error("Error retrieving task result", e)
+        null
+      }
+    } else {
+      null
+    }
   }
 
   fun stopAll() {
