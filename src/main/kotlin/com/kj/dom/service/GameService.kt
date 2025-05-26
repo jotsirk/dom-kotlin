@@ -29,9 +29,7 @@ class GameService {
   private lateinit var domApiClient: DomApiClient
 
   fun startGame(): GameState {
-    val gameStateResponse =
-      domApiClient.startGame()
-        ?: throw IllegalStateException("Could not start game")
+    val gameStateResponse = domApiClient.startGame() ?: error("Could not start game")
     return gameStateResponse.toModel()
   }
 
@@ -58,7 +56,7 @@ class GameService {
         encrypted = adResponse.encrypted,
         probability = enumProbability?.displayName ?: decryptedProbability,
       )
-    } ?: throw IllegalStateException("Could not fetch ad messages")
+    } ?: error("Could not fetch ad messages")
   }
 
   fun buyShopItem(
@@ -67,12 +65,12 @@ class GameService {
   ): ShopBuyResponse {
     val response =
       domApiClient.buyShopItem(gameId, itemId)
-        ?: throw IllegalStateException("Could not buy shop item")
+        ?: error("Could not buy shop item")
     return response
   }
 
   fun solveAd(gameId: String, adId: String): SolveAd {
-    val response = domApiClient.solveAd(gameId, adId) ?: throw IllegalStateException("Could not solve ad")
+    val response = domApiClient.solveAd(gameId, adId) ?: error("Could not solve ad")
     return response.toModel()
   }
 
@@ -149,6 +147,11 @@ class GameService {
     )
   }
 
+  private fun decodeAdMessage(
+    value: String,
+    encrypted: Int?,
+  ): String = if (encrypted == 1 && isBase64(value)) decodeBase64(value) else value
+
   private fun isBase64(value: String): Boolean {
     return try {
       Base64.getDecoder().decode(value)
@@ -159,7 +162,4 @@ class GameService {
     }
   }
 
-  private fun decodeAdMessage(value: String, encrypted: Int?): String {
-    return if (encrypted == 1 && isBase64(value)) decodeBase64(value) else value
-  }
 }

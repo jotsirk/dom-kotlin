@@ -21,8 +21,8 @@ enum class AdProbability(
   companion object {
     private val displayNameMap = entries.associateBy { it.displayName }
 
-    val EASY = listOf(SURE_THING, PIECE_OF_CAKE, WALK_IN_THE_PARK)
-    val MEDIUM = listOf(QUITE_LIKELY, HMMM)
+    val EASY = listOf(SURE_THING, PIECE_OF_CAKE)
+    val MEDIUM = listOf(WALK_IN_THE_PARK, QUITE_LIKELY, HMMM)
     val HARD = listOf(GAMBLE, RISKY, RATHER_DETRIMENTAL, SUICIDE_MISSION, PLAYING_WITH_FIRE, IMPOSSIBLE)
 
     fun fromDisplayName(displayName: String): AdProbability? = displayNameMap[displayName]

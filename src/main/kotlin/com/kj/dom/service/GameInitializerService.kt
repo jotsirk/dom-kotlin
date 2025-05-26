@@ -8,10 +8,10 @@ import org.springframework.boot.ApplicationRunner
 import org.springframework.stereotype.Component
 
 @Component
-class GameInitializerService(
+class GameInitializerService : ApplicationRunner {
   @Value("\${dom.start.manually:false}")
-  private val startManually: Boolean,
-) : ApplicationRunner {
+  private var startManually: Boolean = false
+
   @Autowired
   private lateinit var gameRunnerService: GameRunnerService
 
