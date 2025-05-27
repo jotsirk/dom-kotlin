@@ -8,10 +8,7 @@ import org.springframework.context.annotation.Configuration
 
 @Configuration
 class ResourcesConfig {
-
-    @Bean
-    fun produceLog(injectionPoint: InjectionPoint): Logger =
-        LoggerFactory.getLogger(injectionPoint.member.declaringClass.name)
-
-
+  @Bean
+  fun produceLog(injectionPoint: InjectionPoint): Logger =
+    LoggerFactory.getLogger(injectionPoint.member.declaringClass.name)
 }

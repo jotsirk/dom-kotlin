@@ -1,6 +1,6 @@
 package com.kj.dom.model
 
-enum class ShopItemEnum(val displayName: String, val price: Int) {
+enum class ShopItemEnum(val id: String, val price: Int) {
 
     HPOT("hpot", 50),
     CS("cs", 100),

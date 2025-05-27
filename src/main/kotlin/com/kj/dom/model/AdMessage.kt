@@ -3,8 +3,8 @@ package com.kj.dom.model
 data class AdMessage(
     val adId: String,
     val message: String,
-    val reward: String,
+    val reward: Int,
     val expiresIn: Int,
-    val encrypted: Any?,
+    val encrypted: Int? = null,
     val probability: String,
 )
