@@ -171,8 +171,4 @@ class GameService {
       false
     }
   }
-
-  private companion object {
-
-  }
 }

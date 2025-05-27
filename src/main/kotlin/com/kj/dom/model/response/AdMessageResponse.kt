@@ -1,7 +1,5 @@
 package com.kj.dom.model.response
 
-import com.kj.dom.model.AdMessage
-
 data class AdMessageResponse(
     val adId: String,
     val message: String,
@@ -9,13 +7,4 @@ data class AdMessageResponse(
     val expiresIn: Int,
     val encrypted: Int?,
     val probability: String,
-) {
-    fun toModel(): AdMessage = AdMessage(
-        adId = adId,
-        message = message,
-        reward = reward.toInt(),
-        expiresIn = expiresIn,
-        encrypted = encrypted,
-        probability = probability,
-    )
-}
+)

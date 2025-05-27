@@ -95,7 +95,6 @@ object DomData {
       probability = "Quite likely",
     )
 
-  // =======
 
   val pieceOfCakeAd3 = AdMessage(
     adId = "vQBMExdF",

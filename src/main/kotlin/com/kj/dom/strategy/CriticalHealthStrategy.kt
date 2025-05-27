@@ -22,14 +22,14 @@ class CriticalHealthStrategy : HealthStrategy {
     val easyAds = GameUtil.groupAdsByProbabilityLevel(filteredAds)[EASY].orEmpty()
     val worthMap = filteredAds.associateWith { GameUtil.calculateAdRewardWorth(it) }
 
-    return findImmediateHealthPotionSolution(champion)
+    return immediatelyBuyHealthPotion(champion)
       ?: findSingleAdSolution(neededGold, easyAds)
       ?: decideWaitOrMultiAdSolution(ads, easyAds, worthMap, neededGold)
       ?: findValuableAdSolution(easyAds, worthMap)
       ?: createFallbackSolution(worthMap)
   }
 
-  private fun findImmediateHealthPotionSolution(champion: Champion): SuggestedMove? =
+  private fun immediatelyBuyHealthPotion(champion: Champion): SuggestedMove? =
     champion
       .takeIf { it.canAffordHealthPotion() }
       ?.let { SuggestedMove(BUY, itemId = HPOT.id) }

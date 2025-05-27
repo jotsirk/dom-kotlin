@@ -73,6 +73,7 @@ class NormalHealthStrategy : HealthStrategy {
       when {
         shouldBuyItemForAd(champion, ad) -> {
           val item = ad.getBestItemForQuest(champion.gameState.turn)
+
           if (item != null) {
             SuggestedMove(BUY_AND_SOLVE, item.id, listOf(ad.adId))
           } else {
