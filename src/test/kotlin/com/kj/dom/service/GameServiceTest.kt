@@ -15,7 +15,6 @@ import org.mockito.Mock
 import org.mockito.junit.jupiter.MockitoExtension
 import org.mockito.kotlin.verify
 import org.mockito.kotlin.whenever
-import org.slf4j.Logger
 import org.springframework.http.HttpStatus
 import org.springframework.web.client.HttpClientErrorException
 
