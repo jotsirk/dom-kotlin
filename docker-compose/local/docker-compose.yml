@@ -7,7 +7,7 @@ services:
       context: ../../
       dockerfile: Dockerfile-dom
     ports:
-      - "8090:8080"
+      - "8090:8090"
       - "8797:8787"
     environment:
       JVM_OPTS: "-Xms256m -Xmx512m"
