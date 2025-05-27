@@ -34,6 +34,7 @@ Or if you wish to run it through the IDEA editor's compose file then build the a
 ### 2.Using Gradle
 
 ```bash
+  ./gradlew build
   ./gradlew bootRun
 ```
 
@@ -47,7 +48,8 @@ You can check the final state of the game using the following endpoint:
 ```bash
   GET http://localhost:8090/dom/game/game-result?taskId={task-id}
 ```
-Replace {task-id} with the actual ID returned when the game was started (you’ll see it in the logs if logging is enabled).
+Replace {task-id} with the actual ID returned when the game was started (you’ll see it in the logs if logging is enabled).\
+If the result is null, that means that a critical failure happened during the solving phase and no status could be set
 
 There is also a possibility to start a new game when the application is running
 
@@ -62,7 +64,7 @@ has more than 4 games waiting
   POST http://localhost:8090/dom/game/all-task-ids
 ```
 
-Will return all the tasks ids in the queue
+Will return all the task ids in the queue
 
 ## Configuration
 You can configure whether the game starts automatically by default in application.properties:
