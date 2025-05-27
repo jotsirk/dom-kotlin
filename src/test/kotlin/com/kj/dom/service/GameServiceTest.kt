@@ -22,9 +22,6 @@ import org.springframework.web.client.HttpClientErrorException
 @ExtendWith(MockitoExtension::class)
 class GameServiceTest {
   @Mock
-  private lateinit var log: Logger
-
-  @Mock
   private lateinit var domApiClient: DomApiClient
 
   @InjectMocks
